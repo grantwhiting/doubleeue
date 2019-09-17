@@ -9,6 +9,6 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <?php include_angular_app(get_stylesheet_directory_uri() . '/dist/doubleeue'); ?>
 </body>
 </html>
