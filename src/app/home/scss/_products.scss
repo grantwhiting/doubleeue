@@ -1,0 +1,32 @@
+@import 'breakpoints';
+
+.products {
+  display: grid;
+  grid-gap: 10px;
+}
+
+//
+//
+//
+// Medium
+// _________________________________________________________________________________________
+@include md {
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  }
+
+}
+
+//
+//
+//
+// Large
+// _________________________________________________________________________________________
+@include lg {
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+
+}

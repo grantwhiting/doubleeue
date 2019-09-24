@@ -1,3 +1,7 @@
-<div>
-    {{ items | json }}
+<div class="products">
+  <du-product
+    *ngFor="let product of products"
+    [productImage]="product.product_image">
+    {{ product.product_name }}
+  </du-product>
 </div>

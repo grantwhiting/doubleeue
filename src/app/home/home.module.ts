@@ -3,6 +3,7 @@ import { HomeComponent } from './home.component';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeResolver } from './home.resolver';
+import { ProductModule } from '../product/product.module';
 
 const COMPONENTS = [
     HomeComponent
@@ -11,7 +12,8 @@ const COMPONENTS = [
 @NgModule({
     imports: [
         CommonModule,
-        HomeRoutingModule
+        HomeRoutingModule,
+        ProductModule
     ],
     declarations: [COMPONENTS],
     providers: [HomeResolver]

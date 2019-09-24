@@ -1,13 +1,14 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { CategoriesService } from '../services/categories.service';
+import { ProductsService } from '../services/products.service';
+import { IProduct } from '../types/product';
 
 @Injectable()
-export class HomeResolver implements Resolve<any> {
-    
-    constructor(private categoriesService: CategoriesService) {}
+export class HomeResolver implements Resolve<IProduct[]> {
+
+    constructor(private productsService: ProductsService) {}
 
     resolve() {
-        return this.categoriesService.getPosts();
+        return this.productsService.getProducts();
     }
 }
