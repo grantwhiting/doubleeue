@@ -30,6 +30,12 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss/mixins/breakpoints",
+                "src/scss/variables"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -90,6 +96,12 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss/mixins/breakpoints",
+                "src/scss/variables"
+              ]
+            },
             "scripts": []
           }
         },
