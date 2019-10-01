@@ -1,0 +1,45 @@
+@import 'fonts';
+@import 'breakpoints';
+
+.nav {
+  max-width: 25em;
+  margin: 0 auto;
+
+  &__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__item {
+    padding: 0.5em 0;
+    font-size: $text__fontSize--01--04;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+}
+
+//
+//
+//
+// Medium
+// _________________________________________________________________________________________
+@include md {
+
+  .nav {
+    position: static;
+
+    &__list {
+      flex-direction: row;
+    }
+
+  }
+
+}

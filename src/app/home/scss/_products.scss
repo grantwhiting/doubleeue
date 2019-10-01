@@ -8,12 +8,25 @@
 //
 //
 //
+// Small
+// _________________________________________________________________________________________
+@include sm {
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+
+}
+
+//
+//
+//
 // Medium
 // _________________________________________________________________________________________
 @include md {
 
   .products {
-    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   }
 
 }

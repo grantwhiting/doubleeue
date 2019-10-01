@@ -6,17 +6,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductComponent } from './product/product.component';
 import { WrapperComponent } from './layout/wrapper/wrapper.component';
-import { LogoComponent } from './logo/logo.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import {HomeModule} from './home/home.module';
+import {ProductModule} from './product/product.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WrapperComponent,
-    LogoComponent,
     NavigationComponent
   ],
   imports: [
@@ -24,7 +23,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

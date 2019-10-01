@@ -9,9 +9,9 @@ import { productsApi } from './apis';
 })
 export class ProductsService {
 
-  constructor(private _http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<IProduct[]> {
-    return this._http.get<IProduct[]>(productsApi);
+    return this.http.get<IProduct[]>(productsApi);
   }
 }
