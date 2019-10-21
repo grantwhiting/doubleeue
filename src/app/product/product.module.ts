@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { ProductComponent } from './product.component';
 
 @NgModule({

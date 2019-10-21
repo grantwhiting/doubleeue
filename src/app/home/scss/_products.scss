@@ -3,6 +3,7 @@
 .products {
   display: grid;
   grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 }
 
 //
@@ -13,7 +14,7 @@
 @include sm {
 
   .products {
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   }
 
 }
@@ -24,19 +25,6 @@
 // Medium
 // _________________________________________________________________________________________
 @include md {
-
-  .products {
-    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
-  }
-
-}
-
-//
-//
-//
-// Large
-// _________________________________________________________________________________________
-@include lg {
 
   .products {
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));

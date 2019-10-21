@@ -1,5 +1,9 @@
+// Global imports
 @import 'breakpoints';
 
+//
+//
+//
 .nav {
   order: 0;
 }
@@ -7,9 +11,9 @@
 //
 //
 //
-// Medium
+// Small
 // _________________________________________________________________________________________
-@include md {
+@include sm {
 
   .nav {
     order: 1;

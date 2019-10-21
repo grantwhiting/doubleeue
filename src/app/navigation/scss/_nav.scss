@@ -1,17 +1,23 @@
+// Global imports
 @import 'fonts';
 @import 'breakpoints';
 
+//
+//
+//
 .nav {
-  max-width: 25em;
   margin: 0 auto;
+  max-width: 25em;
+  overflow: hidden;
 
   &__list {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    padding: 0;
+    margin: 0;
     flex-direction: column;
     text-align: center;
+    padding: 1em 0;
   }
 
   &__item {
@@ -29,12 +35,13 @@
 //
 //
 //
-// Medium
+// Small
 // _________________________________________________________________________________________
-@include md {
+@include sm {
 
   .nav {
-    position: static;
+    padding-top: 0;
+    height: auto !important;
 
     &__list {
       flex-direction: row;

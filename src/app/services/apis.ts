@@ -1,1 +1,3 @@
-export const productsApi = '/wordpress/wp-json/wp/v2/products';
+import { environment } from '../../environments/environment';
+
+export const productsApi = `${environment.apiUrl}/wp-json/wp/v2/product`;

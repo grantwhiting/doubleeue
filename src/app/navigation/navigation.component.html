@@ -1,4 +1,18 @@
-<nav class="nav">
+<div class="trigger">
+  <button
+    (click)="triggerMobileNav()"
+    class="trigger__item">
+    <span class="trigger__bar"></span>
+    <span class="trigger__bar"></span>
+    <span class="trigger__bar"></span>
+  </button>
+</div>
+<nav
+  [@expandHeightShowHide]="{
+    value: animationState,
+    params: { collapsedHeight: '0px' }
+  }"
+  class="nav">
   <ul class="nav__list">
     <li class="nav__item">
       <a
