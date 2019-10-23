@@ -1,7 +1,12 @@
-<du-wrapper>
-  <header class="header">
-    <a [routerLink]="['/']" class="logo"></a>
-    <du-navigation class="nav"></du-navigation>
-  </header>
-  <router-outlet></router-outlet>
-</du-wrapper>
+<mat-drawer-container>
+  <mat-drawer #mobileNav>
+    <du-mobile-navigation class="mobileNav"></du-mobile-navigation>
+  </mat-drawer>
+  <du-wrapper>
+    <header class="header">
+      <a [routerLink]="['/']" class="logo"></a>
+      <du-navigation class="nav"></du-navigation>
+    </header>
+    <router-outlet></router-outlet>
+  </du-wrapper>
+</mat-drawer-container>

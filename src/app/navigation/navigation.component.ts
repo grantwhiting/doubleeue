@@ -1,22 +1,16 @@
-import {Component, HostBinding} from '@angular/core';
-import {expandHeightShowHideAnimation} from '../animations/expandHeightShowHideAnimation';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'du-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss'],
-  animations: [expandHeightShowHideAnimation]
+  styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
-  @HostBinding('attr.aria-expanded') isExpanded = false;
-  animationState = 'collapsed';
+  @Output() toggleMobileNavEmitter = new EventEmitter<boolean>();
+  isNavOpen = false;
 
-  triggerMobileNav(): void {
-    this.isExpanded = !this.isExpanded;
-    if (this.isExpanded) {
-      this.animationState = 'expanded';
-    } else {
-      this.animationState = 'collapsed';
-    }
+  toggleMobileNav(): void {
+    this.isNavOpen = !this.isNavOpen;
+    this.toggleMobileNavEmitter.emit(this.isNavOpen);
   }
 }

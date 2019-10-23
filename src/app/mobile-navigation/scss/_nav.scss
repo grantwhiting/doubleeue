@@ -1,0 +1,25 @@
+// Global imports
+@import 'fonts';
+
+//
+//
+//
+.nav {
+  padding: 1.25em;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0.5em 0;
+    font-size: $text__fontSize--01--04;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+}

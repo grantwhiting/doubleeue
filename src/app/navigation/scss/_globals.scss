@@ -1,18 +1,11 @@
 // Global imports
 @import 'breakpoints';
 
-//
-//
-//
 :host {
+  $margin: 1.875em;
   font-size: 1rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  background: rgba(232, 232, 232, 0.9);
+  margin-left: -$margin;
+  margin-right: -$margin;
 }
 
 //
@@ -23,7 +16,8 @@
 @include sm {
 
   :host {
-    position: static;
+    margin-left: 0;
+    margin-right: 0;
   }
 
 }

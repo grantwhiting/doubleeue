@@ -8,14 +8,13 @@
 .nav {
   margin: 0 auto;
   max-width: 25em;
-  overflow: hidden;
+  display: none;
 
   &__list {
     display: flex;
     width: 100%;
     justify-content: space-around;
     margin: 0;
-    flex-direction: column;
     text-align: center;
     padding: 1em 0;
   }
@@ -40,13 +39,7 @@
 @include sm {
 
   .nav {
-    padding-top: 0;
-    height: auto !important;
-
-    &__list {
-      flex-direction: row;
-    }
-
+    display: block;
   }
 
 }

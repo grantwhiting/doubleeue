@@ -10,13 +10,16 @@ import { WrapperComponent } from './layout/wrapper/wrapper.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {HomeModule} from './home/home.module';
 import {ProductModule} from './product/product.module';
+import {MatButtonModule} from '@angular/material';
+import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WrapperComponent,
-    NavigationComponent
+    NavigationComponent,
+    MobileNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import {ProductModule} from './product/product.module';
     MaterialModule,
     HttpClientModule,
     HomeModule,
-    ProductModule
+    ProductModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
