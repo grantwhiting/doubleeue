@@ -20,7 +20,7 @@ function include_angular_app( $dist_path )
         'vendor.js',
         'main.js'
     );
-    echo "<du-root></du-root>";
+    echo "<app-root></app-root>";
     foreach ($scripts as $script) {
         echo "<script src='{$dist_path}/$script'></script>";
     }

@@ -2,7 +2,7 @@ import {Component, HostBinding, ViewChild} from '@angular/core';
 import {MatDrawer} from '@angular/material';
 
 @Component({
-  selector: 'du-root',
+  selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
