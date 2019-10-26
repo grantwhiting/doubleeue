@@ -12,7 +12,7 @@ import {takeUntil} from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
   products: IProduct[];
 
-  private unsubscribe = new Subject<void>();
+  private unsubscribe: Subject<void> = new Subject();
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
