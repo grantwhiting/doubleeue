@@ -16,6 +16,7 @@ import { WeddingsComponent } from './weddings/weddings.component';
 import { CardsComponent } from './cards/cards.component';
 import { CustomComponent } from './custom/custom.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     WeddingsComponent,
     CardsComponent,
     CustomComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

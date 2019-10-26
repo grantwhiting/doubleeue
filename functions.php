@@ -1,6 +1,6 @@
 <?php
 /**
- * Include the neccessary content to make an Angular app work
+ * Include the necessary content to make an Angular app work
  *
  * @link    https://goo.gl/jxZueN
  * @param   string  $dist_path  path to the `dist` folder of your app
@@ -20,7 +20,7 @@ function include_angular_app( $dist_path )
         'vendor.js',
         'main.js'
     );
-    echo "<app-root></app-root>";
+    echo "<du-root></du-root>";
     foreach ($scripts as $script) {
         echo "<script src='{$dist_path}/$script'></script>";
     }

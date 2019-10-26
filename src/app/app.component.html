@@ -3,10 +3,9 @@
     <du-mobile-navigation class="mobileNav"></du-mobile-navigation>
   </mat-drawer>
   <du-wrapper>
-    <header class="header">
-      <a [routerLink]="['/']" class="logo"></a>
-      <du-navigation class="nav"></du-navigation>
-    </header>
+    <du-header (toggleNavEmitter)="toggleNav()">
+    </du-header>
     <router-outlet></router-outlet>
+    <du-footer></du-footer>
   </du-wrapper>
 </mat-drawer-container>
