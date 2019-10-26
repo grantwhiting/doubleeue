@@ -6,11 +6,11 @@ import {IProduct} from '../types/product';
 @Injectable()
 export class WeddingsResolver implements Resolve<IProduct> {
 
-  private customProductId = 13;
+  private weddingsProductId = 13;
 
   constructor(private productsService: ProductsService) { }
 
   resolve() {
-    return this.productsService.getProductByProductId(this.customProductId);
+    return this.productsService.getProductByProductId(this.weddingsProductId);
   }
 }
