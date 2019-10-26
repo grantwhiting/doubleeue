@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, HostBinding, OnDestroy, ViewChild} from '@angular/core';
-import {MobileNavigationComponent} from './mobile-navigation/mobile-navigation.component';
 import {NavigationComponent} from './navigation/navigation.component';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';

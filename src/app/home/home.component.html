@@ -2,6 +2,6 @@
   <du-product
     *ngFor="let product of products"
     [productImage]="product.product_image">
-    {{ product.product_name }}
+    {{ product.title.rendered }}
   </du-product>
 </div>

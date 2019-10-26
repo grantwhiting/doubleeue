@@ -6,11 +6,9 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
-  @Output() toggleMobileNavEmitter = new EventEmitter<boolean>();
-  isNavOpen = false;
+  @Output() toggleMobileNavEmitter = new EventEmitter<void>();
 
   toggleMobileNav(): void {
-    this.isNavOpen = !this.isNavOpen;
-    this.toggleMobileNavEmitter.emit(this.isNavOpen);
+    this.toggleMobileNavEmitter.emit();
   }
 }
