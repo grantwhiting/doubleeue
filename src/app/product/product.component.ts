@@ -8,4 +8,5 @@ import { IProductImage } from '../types/product-image';
 })
 export class ProductComponent {
   @Input() productImage: IProductImage;
+  @Input() slug: string;
 }

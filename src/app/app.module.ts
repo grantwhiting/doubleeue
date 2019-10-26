@@ -12,9 +12,6 @@ import {HomeModule} from './home/home.module';
 import {ProductModule} from './product/product.module';
 import {MatButtonModule} from '@angular/material';
 import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';
-import { WeddingsComponent } from './weddings/weddings.component';
-import { CardsComponent } from './cards/cards.component';
-import { CustomComponent } from './custom/custom.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -25,9 +22,6 @@ import { HeaderComponent } from './header/header.component';
     WrapperComponent,
     NavigationComponent,
     MobileNavigationComponent,
-    WeddingsComponent,
-    CardsComponent,
-    CustomComponent,
     FooterComponent,
     HeaderComponent
   ],
