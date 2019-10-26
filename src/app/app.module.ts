@@ -15,6 +15,7 @@ import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation
 import { WeddingsComponent } from './weddings/weddings.component';
 import { CardsComponent } from './cards/cards.component';
 import { CustomComponent } from './custom/custom.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CustomComponent } from './custom/custom.component';
     MobileNavigationComponent,
     WeddingsComponent,
     CardsComponent,
-    CustomComponent
+    CustomComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
