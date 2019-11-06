@@ -14,8 +14,11 @@ import {MatButtonModule} from '@angular/material';
 import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
+import {AboutModule} from './about/about.module';
+import {ContactModule} from './contact/contact.module';
+import {CardsModule} from './cards/cards.module';
+import {CustomModule} from './custom/custom.module';
+import {WeddingsModule} from './weddings/weddings.module';
 
 
 @NgModule({
@@ -35,7 +38,12 @@ import { ContactComponent } from './contact/contact.component';
     HttpClientModule,
     HomeModule,
     ProductModule,
-    MatButtonModule
+    MatButtonModule,
+    AboutModule,
+    ContactModule,
+    CardsModule,
+    CustomModule,
+    WeddingsModule
   ],
   bootstrap: [AppComponent]
 })

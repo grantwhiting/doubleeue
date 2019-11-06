@@ -1,4 +1,16 @@
 import { Routes } from '@angular/router';
+import {HomeComponent} from './home/home.component';
+import {AboutComponent} from './about/about.component';
+import {ContactComponent} from './contact/contact.component';
+import {WeddingsComponent} from './weddings/weddings.component';
+import {CardsComponent} from './cards/cards.component';
+import {CustomComponent} from './custom/custom.component';
+import {HomeResolver} from './home/home.resolver';
+import {AboutResolver} from './about/about.resolver';
+import {ContactResolver} from './contact/contact.resolver';
+import {WeddingsResolver} from './weddings/weddings.resolver';
+import {CardsResolver} from './cards/cards.resolver';
+import {CustomResolver} from './custom/custom.resolver';
 
 export const routes: Routes = [
   { path: 'product/cards', redirectTo: 'cards', pathMatch: 'full' },
@@ -6,29 +18,33 @@ export const routes: Routes = [
   { path: 'product/weddings', redirectTo: 'weddings', pathMatch: 'full' },
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-    pathMatch: 'full'
+    component: HomeComponent,
+    pathMatch: 'full',
+    resolve: { items: HomeResolver }
   },
   {
     path: 'about',
-    loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
-    pathMatch: 'full'
+    component: AboutComponent,
+    resolve: { page: AboutResolver }
   },
   {
     path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
-    pathMatch: 'full'
+    component: ContactComponent,
+    resolve: { page: ContactResolver }
   },
   {
     path: 'weddings',
-    loadChildren: () => import('./weddings/weddings.module').then(m => m.WeddingsModule)
+    component: WeddingsComponent,
+    resolve: { page: WeddingsResolver }
   },
   {
     path: 'cards',
-    loadChildren: () => import('./cards/cards.module').then(m => m.CardsModule)
+    component: CardsComponent,
+    resolve: { items: CardsResolver }
   },
   {
     path: 'custom',
-    loadChildren: () => import('./custom/custom.module').then(m => m.CustomModule)
+    component: CustomComponent,
+    resolve: { items: CustomResolver }
   }
 ];
