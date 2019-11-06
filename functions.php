@@ -9,16 +9,17 @@
 function include_angular_app( $dist_path )
 {
     $scripts = array(
-        // 'runtime-es2015.js',
-        // 'polyfills-es2015.js',
-        // 'styles-es2015.js',
-        // 'vendor-es2015.js',
-        // 'main-es2015.js'
         'runtime.js',
         'polyfills.js',
         'styles.js',
         'vendor.js',
-        'main.js'
+        'main.js',
+        'common.js',
+        'about-about-module.js',
+        'contact-contact-module.js',
+        'cards-cards-module.js',
+        'custom-custom-module.js',
+        'weddings-weddings-module.js'
     );
     echo "<app-root></app-root>";
     foreach ($scripts as $script) {
