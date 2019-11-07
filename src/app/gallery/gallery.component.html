@@ -1,0 +1,8 @@
+<div class="items">
+  <a
+    *ngFor="let item of galleryItems"
+    [attr.href]="item.post_content"
+    [style.backgroundImage]="'url('+ item.guid +')'"
+    class="item">
+  </a>
+</div>

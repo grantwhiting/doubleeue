@@ -1,4 +1,5 @@
 import { IProductImage } from './product-image';
+import {IGalleryItem} from './gallery-item';
 
 export interface IProduct {
   id: number;
@@ -22,4 +23,5 @@ export interface IProduct {
   };
   template: string;
   product_image: IProductImage;
+  gallery: IGalleryItem[];
 }

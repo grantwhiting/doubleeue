@@ -1,0 +1,36 @@
+@import 'breakpoints';
+
+//
+//
+//
+.items {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+}
+
+//
+//
+//
+.item {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+}
+
+//
+//
+//
+// Small
+// _________________________________________________________________________________________
+@include sm {
+
+  .items {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+}
+

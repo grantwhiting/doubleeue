@@ -13,13 +13,7 @@ function include_angular_app( $dist_path )
         'polyfills.js',
         'styles.js',
         'vendor.js',
-        'main.js',
-        'common.js',
-        'about-about-module.js',
-        'contact-contact-module.js',
-        'cards-cards-module.js',
-        'custom-custom-module.js',
-        'weddings-weddings-module.js'
+        'main.js'
     );
     echo "<app-root></app-root>";
     foreach ($scripts as $script) {

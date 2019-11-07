@@ -19,8 +19,8 @@ export class AboutComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.activatedRoute.data
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe(data => {
-        this.pageContent = data.page;
+      .subscribe(({ page }) => {
+        this.pageContent = page;
       });
   }
 

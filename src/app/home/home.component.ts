@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.activatedRoute.data
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe(data => this.products = data.items);
+      .subscribe(({ pods }) => this.products = pods);
   }
 
   ngOnDestroy() {
