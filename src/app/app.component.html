@@ -1,6 +1,9 @@
-<mat-drawer-container>
-  <mat-drawer #mobileNav>
-    <du-mobile-navigation class="mobileNav"></du-mobile-navigation>
+<mat-drawer-container class="drawer">
+  <mat-drawer>
+    <nav
+      [duMobileNavigation]="isExpanded"
+      (toggleNavEmitter)="toggleNav()">
+    </nav>
   </mat-drawer>
   <du-wrapper>
     <du-header (toggleNavEmitter)="toggleNav()"></du-header>

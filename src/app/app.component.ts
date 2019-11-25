@@ -1,20 +1,27 @@
-import {Component, HostBinding, ViewChild} from '@angular/core';
+import {Component, OnDestroy, ViewChild} from '@angular/core';
 import {MatDrawer} from '@angular/material';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['app.component.scss']
 })
-export class AppComponent {
-  @ViewChild('mobileNav', { static: false }) matDrawer: MatDrawer;
-  @HostBinding('attr.aria-expanded') isExpanded = false;
+export class AppComponent implements OnDestroy {
+  @ViewChild(MatDrawer, { static: false }) matDrawer: MatDrawer;
+  isExpanded = false;
+
+  private unsubscribe = new Subject<void>();
 
   toggleNav(): void {
-    this.matDrawer.toggle()
-      .then(state => {
-        state === 'open'
-          ? this.isExpanded = true
-          : this.isExpanded = false;
-      });
+    this.matDrawer.openedChange
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(navOpen => this.isExpanded = navOpen);
+    this.matDrawer.toggle();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.next();
   }
 }

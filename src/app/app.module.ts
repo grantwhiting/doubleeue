@@ -19,6 +19,7 @@ import {ContactModule} from './contact/contact.module';
 import {CardsModule} from './cards/cards.module';
 import {CustomModule} from './custom/custom.module';
 import {WeddingsModule} from './weddings/weddings.module';
+import {WindowRef} from './services/window.service';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import {WeddingsModule} from './weddings/weddings.module';
     CustomModule,
     WeddingsModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [WindowRef]
 })
 export class AppModule { }

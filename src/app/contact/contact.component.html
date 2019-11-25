@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<div
+  [innerHTML]="pageContent.content.rendered"
+  class="content">
+</div>
+<form
+  [formGroup]="form"
+  class="form">
+  <mat-form-field class="form__input">
+    <input
+      matInput
+      placeholder="Name"
+      type="text"
+      formControlName="contactName" />
+  </mat-form-field>
+  <mat-form-field class="form__input">
+    <input
+      matInput
+      placeholder="Email"
+      type="email"
+      formControlName="contactEmail" />
+  </mat-form-field>
+  <mat-form-field class="form__textarea">
+    <textarea
+      matInput
+      placeholder="Message"
+      formControlName="contactMessage">
+  </textarea>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    (click)="postForm()"
+    type="button"
+    class="form__button">
+    Submit
+  </button>
+</form>

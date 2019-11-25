@@ -1,25 +1,27 @@
-<nav class="nav">
-  <ul class="nav__list">
-    <li>
-      <a
-        tabindex="0"
-        class="nav__link">
-        Shop
-      </a>
-    </li>
-    <li>
-      <a
-        tabindex="0"
-        class="nav__link">
-        About Me
-      </a>
-    </li>
-    <li>
-      <a
-        tabindex="0"
-        class="nav__link">
-        Contact
-      </a>
-    </li>
-  </ul>
-</nav>
+<ul class="list">
+  <li>
+    <a
+      tabindex="0"
+      class="list__link">
+      Shop
+    </a>
+  </li>
+  <li>
+    <a
+      routerLink="about"
+      (click)="toggleNav()"
+      tabindex="0"
+      class="list__link">
+      About Me
+    </a>
+  </li>
+  <li>
+    <a
+      routerLink="contact"
+      (click)="toggleNav()"
+      tabindex="0"
+      class="list__link">
+      Contact
+    </a>
+  </li>
+</ul>

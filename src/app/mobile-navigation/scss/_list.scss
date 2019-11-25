@@ -1,0 +1,23 @@
+// Global imports
+@import 'fonts';
+@import 'colors';
+
+//
+//
+//
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__link {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    color: $color--01;
+    display: block;
+    font-size: $text__fontSize--01--04;
+    padding: 0.9em 0 0.9em 1em;
+    text-decoration: none;
+    width: 100%;
+  }
+
+}

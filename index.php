@@ -13,4 +13,7 @@
 <body>
   <?php include_angular_app(get_stylesheet_directory_uri() . '/dist/doubleeue'); ?>
 </body>
+<script>
+window.nonce = "<?php echo wp_create_nonce( 'wp_rest' ); ?>";
+</script>
 </html>
