@@ -1,5 +1,12 @@
+// Global Imports
+@import 'variables';
+
+//
+//
+//
 :host {
   font-size: 1rem;
+  height: $page-content-height;
   max-width: 800px;
   width: 100%;
 }

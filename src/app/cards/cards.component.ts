@@ -10,7 +10,7 @@ import {IProduct} from '../types/product';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit, OnDestroy {
-  product: IProduct;
+  pod: IProduct;
 
   private unsubscribe: Subject<void> = new Subject();
 
@@ -19,7 +19,7 @@ export class CardsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.activatedRoute.data
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe(({ pods }) => this.product = pods);
+      .subscribe(({ pod }) => this.pod = pod);
   }
 
   ngOnDestroy() {

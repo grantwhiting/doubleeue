@@ -25,17 +25,17 @@ export const routes: Routes = [
   {
     path: 'weddings',
     component: WeddingsComponent,
-    resolve: { pods: WeddingsResolver }
+    resolve: { pod: WeddingsResolver }
   },
   {
     path: 'cards',
     component: CardsComponent,
-    resolve: { pods: CardsResolver }
+    resolve: { pod: CardsResolver }
   },
   {
     path: 'custom',
     component: CustomComponent,
-    resolve: { pods: CustomResolver }
+    resolve: { pod: CustomResolver }
   },
   {
     path: 'about',
