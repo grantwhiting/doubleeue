@@ -3,4 +3,10 @@
   [innerHTML]="pod.content.rendered"
   class="content">
 </div>
-<du-gallery [galleryItems]="pod.gallery"></du-gallery>
+<div class="items">
+  <du-product
+    *ngFor="let item of pod.gallery"
+    [slug]="item.post_content"
+    [productImage]="item.guid">
+  </du-product>
+</div>

@@ -2,15 +2,15 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CardsComponent} from './cards.component';
 import {CardsResolver} from './cards.resolver';
-import {GalleryModule} from '../gallery/gallery.module';
+import {ProductModule} from '../product/product.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    GalleryModule
+    ProductModule
   ],
-  declarations: [CardsComponent],
-  exports: [CardsComponent],
-  providers: [CardsResolver]
+  declarations: [ CardsComponent ],
+  exports: [ CardsComponent ],
+  providers: [ CardsResolver ]
 })
 export class CardsModule { }
