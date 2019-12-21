@@ -1,0 +1,40 @@
+%placeholder_attached {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.project {
+  display: block;
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+
+  &__title {
+    @extend %placeholder_attached;
+    color: #fff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title:hover + &__image {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    @extend %placeholder_attached;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+  }
+
+}

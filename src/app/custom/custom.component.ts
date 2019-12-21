@@ -5,7 +5,6 @@ import {takeUntil} from 'rxjs/operators';
 import {IProduct} from '../types/product';
 import {ProjectsService} from '../services/projects/projects.service';
 import {IProjectIdAndImage} from '../types/project';
-import {IProductImage} from '../types/product-image';
 
 @Component({
   selector: 'du-custom',
@@ -15,7 +14,6 @@ import {IProductImage} from '../types/product-image';
 export class CustomComponent implements OnInit, OnDestroy {
   pod: IProduct;
   customProjects: IProjectIdAndImage[];
-  customProjectImages: IProductImage[];
 
   private unsubscribe: Subject<void> = new Subject();
 
@@ -31,7 +29,7 @@ export class CustomComponent implements OnInit, OnDestroy {
     this.projectsService.getCustomProjects()
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(projects => {
-        this.customProjectImages = [].concat(...projects.map(item => item.image));
+        this.customProjects = projects;
       });
   }
 

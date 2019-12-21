@@ -4,5 +4,8 @@
   class="content">
 </div>
 <div class="items">
-
+  <du-project
+    *ngFor="let projectIdAndImage of customProjects"
+    [projectIdAndImage]="projectIdAndImage">
+  </du-project>
 </div>
