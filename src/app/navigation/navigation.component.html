@@ -12,25 +12,30 @@
   <ul class="nav__list">
     <li class="nav__item">
       <a
+        [matMenuTriggerFor]="menu"
         tabindex="0"
-        class="nav__link">
+        class="
+          nav__link
+          nav__link--menu">
         Shop
       </a>
+      <mat-menu #menu="matMenu">
+        <button
+          *ngFor="let item of productNavItems"
+          mat-menu-item
+          [routerLink]="item.url.split('/')[productNavItems.length + 2]">
+          {{ item.title }}
+        </button>
+      </mat-menu>
     </li>
-    <li class="nav__item">
+    <li
+      *ngFor="let item of navItems"
+      class="nav__item">
       <a
-        routerLink="about"
+        [routerLink]="item.url.split('/')[navItems.length + 2]"
         tabindex="0"
         class="nav__link">
-        About Me
-      </a>
-    </li>
-    <li class="nav__item">
-      <a
-        routerLink="contact"
-        tabindex="0"
-        class="nav__link">
-        Contact
+        {{ item.title }}
       </a>
     </li>
   </ul>

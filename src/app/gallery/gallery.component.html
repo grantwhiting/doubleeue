@@ -1,8 +1,7 @@
 <div class="items">
-  <a
+  <du-product
     *ngFor="let item of galleryItems"
-    [attr.href]="item.post_content"
-    [style.backgroundImage]="'url('+ item.guid +')'"
-    class="item">
-  </a>
+    [slug]="item.post_content"
+    [productImage]="item.guid">
+  </du-product>
 </div>

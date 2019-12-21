@@ -44,7 +44,7 @@
 @include sm {
 
   .form {
-    grid: repeat(3, auto) / 1fr 1fr;
+    grid: repeat(3, auto) / repeat(2, 1fr);
     grid-template-areas: "inputLeft inputRight"
                         "textarea textarea"
                         "button .";

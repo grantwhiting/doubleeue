@@ -3,7 +3,7 @@ import {Subject} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {takeUntil} from 'rxjs/operators';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {FormService} from '../services/form.service';
+import {FormService} from '../services/form/form.service';
 import {IPage} from '../types/page';
 
 @Component({
@@ -14,6 +14,7 @@ import {IPage} from '../types/page';
 export class ContactComponent implements OnInit, OnDestroy {
   form: FormGroup;
   pageContent: IPage;
+  showConfirmation: boolean;
 
   private unsubscribe: Subject<void> = new Subject();
 
@@ -39,7 +40,16 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.unsubscribe.next();
   }
 
+  showForm() {
+    this.showConfirmation = false;
+  }
+
   postForm() {
-    this.formService.postFormData(this.form.value);
+    if (!this.form.valid) {
+      return;
+    }
+    this.formService.postFormData(this.form.value)
+      .subscribe(response => console.log(response));
+    this.showConfirmation = true;
   }
 }

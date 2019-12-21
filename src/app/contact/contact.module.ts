@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ContactComponent} from './contact.component';
 import {ContactResolver} from './contact.resolver';
 import {ReactiveFormsModule} from '@angular/forms';
-import {FormService} from '../services/form.service';
+import {FormService} from '../services/form/form.service';
 import {MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 
 @NgModule({

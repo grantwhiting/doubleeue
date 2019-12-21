@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Resolve} from '@angular/router';
 import {IPage} from '../types/page';
-import {PagesService} from '../services/pages.service';
+import {PagesService} from '../services/pages/pages.service';
 
 @Injectable()
 export class ContactResolver implements Resolve<IPage> {

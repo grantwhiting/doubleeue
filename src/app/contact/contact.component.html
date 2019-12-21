@@ -1,36 +1,49 @@
-<div
-  [innerHTML]="pageContent.content.rendered"
-  class="content">
-</div>
-<form
-  [formGroup]="form"
-  class="form">
-  <mat-form-field class="form__input">
-    <input
-      matInput
-      placeholder="Name"
-      type="text"
-      formControlName="contactName" />
-  </mat-form-field>
-  <mat-form-field class="form__input">
-    <input
-      matInput
-      placeholder="Email"
-      type="email"
-      formControlName="contactEmail" />
-  </mat-form-field>
-  <mat-form-field class="form__textarea">
+<ng-container *ngIf="!showConfirmation; else confirmation">
+  <div
+    [innerHTML]="pageContent.content.rendered"
+    class="content">
+  </div>
+  <form
+    [formGroup]="form"
+    class="form">
+    <mat-form-field class="form__input">
+      <input
+        matInput
+        placeholder="Name"
+        type="text"
+        formControlName="contactName" />
+    </mat-form-field>
+    <mat-form-field class="form__input">
+      <input
+        matInput
+        placeholder="Email"
+        type="email"
+        formControlName="contactEmail" />
+    </mat-form-field>
+    <mat-form-field class="form__textarea">
     <textarea
       matInput
       placeholder="Message"
       formControlName="contactMessage">
   </textarea>
-  </mat-form-field>
-  <button
-    mat-raised-button
-    (click)="postForm()"
-    type="button"
-    class="form__button">
-    Submit
-  </button>
-</form>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      (click)="postForm()"
+      type="button"
+      class="form__button">
+      Submit
+    </button>
+  </form>
+</ng-container>
+<ng-template #confirmation>
+  <div class="confirmation">
+    <h2>Thank you!</h2>
+    <h3>Your message has been sent</h3>
+    <button
+      mat-raised-button
+      (click)="showForm()">
+      Send another
+    </button>
+  </div>
+</ng-template>

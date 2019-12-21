@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IGalleryItem} from '../types/gallery-item';
+import {IProductImage} from '../types/product-image';
 
 @Component({
   selector: 'du-gallery',
@@ -7,5 +8,6 @@ import {IGalleryItem} from '../types/gallery-item';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent {
-  @Input() galleryItems: IGalleryItem[];
+  @Input() galleryItems: IGalleryItem[] | IProductImage[];
+  @Input() id: number;
 }

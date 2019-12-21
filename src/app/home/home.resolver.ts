@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../services/products/products.service';
 import { IProduct } from '../types/product';
 
 @Injectable()

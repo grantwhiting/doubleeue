@@ -28,7 +28,25 @@
 
   &__link {
     color: $color--01;
+    cursor: pointer;
     text-decoration: none;
+
+    &--menu {
+      padding-right: 13px;
+      position: relative;
+
+      &::after {
+        content: '\203A';
+        font-size: 1.25em;
+        margin-left: 4px;
+        position: absolute;
+        right: 0;
+        transform: rotate(90deg);
+        top: -2px;
+      }
+
+    }
+
   }
 
 }

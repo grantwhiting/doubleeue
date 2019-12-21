@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { IProductImage } from '../types/product-image';
 
 @Component({
@@ -6,7 +6,16 @@ import { IProductImage } from '../types/product-image';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
-  @Input() productImage: IProductImage;
+export class ProductComponent implements OnInit {
+  @Input() productImage: IProductImage | string;
   @Input() slug: string;
+  displayImage: IProductImage | string;
+
+  ngOnInit() {
+    if (typeof this.productImage === 'string') {
+      this.displayImage = this.productImage;
+    } else {
+      this.displayImage = this.productImage.guid;
+    }
+  }
 }
