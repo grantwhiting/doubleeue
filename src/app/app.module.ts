@@ -21,7 +21,7 @@ import {CustomModule} from './custom/custom.module';
 import {WeddingsModule} from './weddings/weddings.module';
 import {WindowRef} from './services/window/window.service';
 import {NavigationService} from './services/navigation/navigation.service';
-import { ModalComponent } from './modal/modal.component';
+import {ModalContainerModule} from './modal/scss';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,7 @@ import { ModalComponent } from './modal/modal.component';
     NavigationComponent,
     MobileNavigationComponent,
     FooterComponent,
-    HeaderComponent,
-    ModalComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +46,8 @@ import { ModalComponent } from './modal/modal.component';
     CardsModule,
     CustomModule,
     WeddingsModule,
-    MatMenuModule
+    MatMenuModule,
+    ModalContainerModule
   ],
   bootstrap: [AppComponent],
   providers: [WindowRef, NavigationService]

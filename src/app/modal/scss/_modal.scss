@@ -1,0 +1,9 @@
+.modal {
+  overflow: auto;
+
+  &__body {
+    padding: 1.2em;
+    background: lightgray;
+  }
+
+}
