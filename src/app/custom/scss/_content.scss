@@ -1,0 +1,24 @@
+// Global imports
+@import 'fonts';
+@import 'breakpoints';
+
+//
+//
+//
+.content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//
+//
+//
+// Medium
+// _________________________________________________________________________________________
+@include md {
+
+  .content {
+    max-width: calc(100% - 10em);
+  }
+
+}

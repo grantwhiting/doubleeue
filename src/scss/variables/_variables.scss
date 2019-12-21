@@ -18,5 +18,5 @@ $header-height: 286px;
 // Footer height
 $footer-height: 130px;
 
-// PAge Content height
+// Page Content height
 $page-content-height: calc(100vh - (#{$header-height} + #{$footer-height}));

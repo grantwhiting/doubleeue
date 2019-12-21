@@ -1,4 +1,8 @@
-<div [innerHTML]="pod.content.rendered"></div>
+<h1 class="title">{{ pod.title.rendered }}</h1>
+<div
+  [innerHTML]="pod.content.rendered"
+  class="content">
+</div>
 <du-gallery
   [galleryItems]="customProjectImages"
   [id]="">
