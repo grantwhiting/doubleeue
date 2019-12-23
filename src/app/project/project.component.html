@@ -1,0 +1,11 @@
+<div
+  tabindex="0"
+  class="project">
+  <h3 class="project__title">
+    <ng-content></ng-content>
+  </h3>
+  <div
+    [style.backgroundImage]="'url('+ projectIdAndImage.image.guid +')'"
+    class="project__image">
+  </div>
+</div>

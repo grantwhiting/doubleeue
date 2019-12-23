@@ -21,7 +21,6 @@ import {CustomModule} from './custom/custom.module';
 import {WeddingsModule} from './weddings/weddings.module';
 import {WindowRef} from './services/window/window.service';
 import {NavigationService} from './services/navigation/navigation.service';
-import {ModalContainerModule} from './modal/scss';
 
 @NgModule({
   declarations: [
@@ -46,8 +45,7 @@ import {ModalContainerModule} from './modal/scss';
     CardsModule,
     CustomModule,
     WeddingsModule,
-    MatMenuModule,
-    ModalContainerModule
+    MatMenuModule
   ],
   bootstrap: [AppComponent],
   providers: [WindowRef, NavigationService]

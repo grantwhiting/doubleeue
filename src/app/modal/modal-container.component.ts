@@ -1,4 +1,4 @@
-import {Component, Directive, ElementRef, Inject, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, ComponentFactoryResolver, Directive, ElementRef, Inject, Input, OnDestroy, OnInit} from '@angular/core';
 import {ModalService} from '../services/modal/modal.service';
 import { DOCUMENT } from '@angular/common';
 
@@ -21,6 +21,7 @@ export class ModalContainerComponent implements OnInit, OnDestroy {
   constructor(
     private modalService: ModalService,
     private el: ElementRef,
+    private componentFactoryResolver: ComponentFactoryResolver,
     @Inject(DOCUMENT) private document: Document) {
 
     this.element = el.nativeElement;

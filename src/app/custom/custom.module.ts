@@ -3,15 +3,16 @@ import {CommonModule} from '@angular/common';
 import {CustomComponent} from './custom.component';
 import {CustomResolver} from './custom.resolver';
 import {ProjectModule} from '../project/project.module';
-import { CustomProjectModalComponent } from './custom-project-modal/custom-project-modal.component';
+import {CustomProjectModalModule} from './custom-project-modal/custom-project-modal.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ProjectModule
+    ProjectModule,
+    CustomProjectModalModule
   ],
-  declarations: [ CustomComponent, CustomProjectModalComponent ],
-  exports: [ CustomComponent ],
+  declarations: [ CustomComponent ],
+  exports: [CustomComponent],
   providers: [ CustomResolver ]
 })
 export class CustomModule { }

@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {ModalContainerBodyDirective, ModalContainerComponent, ModalContainerTitleDirective} from '../modal-container.component';
+import {ModalContainerBodyDirective, ModalContainerComponent, ModalContainerTitleDirective} from './modal-container.component';
 
 @NgModule({
   declarations: [

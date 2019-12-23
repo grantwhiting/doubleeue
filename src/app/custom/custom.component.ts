@@ -14,6 +14,7 @@ import {IProjectIdAndImage} from '../types/project';
 export class CustomComponent implements OnInit, OnDestroy {
   pod: IProduct;
   customProjects: IProjectIdAndImage[];
+  showModal: boolean;
 
   private unsubscribe: Subject<void> = new Subject();
 

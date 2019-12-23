@@ -1,9 +1,16 @@
 .modal {
   overflow: auto;
+  padding: 1.2em;
+  background: lightgray;
+
+  &__title {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+  }
 
   &__body {
-    padding: 1.2em;
-    background: lightgray;
+
   }
 
 }
