@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, ViewContainerRef} from '@angular/core';
 import {Subject} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {takeUntil} from 'rxjs/operators';
@@ -14,13 +14,12 @@ import {IProjectIdAndImage} from '../types/project';
 export class CustomComponent implements OnInit, OnDestroy {
   pod: IProduct;
   customProjects: IProjectIdAndImage[];
-  showModal: boolean;
 
   private unsubscribe: Subject<void> = new Subject();
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private projectsService: ProjectsService) { }
+    private projectsService: ProjectsService) {}
 
   ngOnInit() {
     this.activatedRoute.data
@@ -29,9 +28,7 @@ export class CustomComponent implements OnInit, OnDestroy {
 
     this.projectsService.getCustomProjects()
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe(projects => {
-        this.customProjects = projects;
-      });
+      .subscribe(projects => this.customProjects = projects);
   }
 
   ngOnDestroy() {

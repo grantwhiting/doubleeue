@@ -5,5 +5,12 @@
   <div class="modal__body">
     <ng-content select="du-modal-container-body"></ng-content>
   </div>
+  <div
+    (click)="closeModal()"
+    class="modal__close">
+  </div>
 </div>
-<div class="background"></div>
+<div
+  (click)="closeModal()"
+  class="background">
+</div>

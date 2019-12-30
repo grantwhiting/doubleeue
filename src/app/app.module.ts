@@ -21,6 +21,8 @@ import {CustomModule} from './custom/custom.module';
 import {WeddingsModule} from './weddings/weddings.module';
 import {WindowRef} from './services/window/window.service';
 import {NavigationService} from './services/navigation/navigation.service';
+import {CustomProjectModalComponent} from './custom/custom-project-modal/custom-project-modal.component';
+import {WeddingProjectModalComponent} from './weddings/wedding-project-modal/wedding-project-modal.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,13 @@ import {NavigationService} from './services/navigation/navigation.service';
     MatMenuModule
   ],
   bootstrap: [AppComponent],
-  providers: [WindowRef, NavigationService]
+  providers: [
+    WindowRef,
+    NavigationService
+  ],
+  entryComponents: [
+    CustomProjectModalComponent,
+    WeddingProjectModalComponent
+  ]
 })
 export class AppModule { }

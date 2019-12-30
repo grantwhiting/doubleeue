@@ -1,7 +1,8 @@
-import {Component, OnDestroy, ViewChild} from '@angular/core';
+import {Component, Inject, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
 import {MatDrawer} from '@angular/material';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {ModalService} from './services/modal/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,12 @@ export class AppComponent implements OnDestroy {
   isExpanded = false;
 
   private unsubscribe = new Subject<void>();
+
+  constructor(
+    @Inject(ModalService) modalService,
+    @Inject(ViewContainerRef) viewContainerRef) {
+    modalService.setRootViewContainerRef(viewContainerRef);
+  }
 
   toggleNav(): void {
     this.matDrawer.openedChange

@@ -1,25 +1,42 @@
-import { Injectable } from '@angular/core';
-import { ModalContainerComponent } from '../../modal/modal-container.component';
+import {ComponentFactoryResolver, Inject, Injectable, ViewContainerRef} from '@angular/core';
+import {Router} from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ModalService {
-  private modals: ModalContainerComponent[] = [];
+  factoryResolver: ComponentFactoryResolver;
+  rootViewContainer: ViewContainerRef;
 
-  add(modal: ModalContainerComponent) {
-    this.modals.push(modal);
+  constructor(
+    @Inject(ComponentFactoryResolver) factoryResolver,
+    private router: Router) {
+
+    this.factoryResolver = factoryResolver;
   }
 
-  remove(id: string) {
-    this.modals = this.modals.filter(modal => modal.id !== id);
+  setRootViewContainerRef(viewContainerRef) {
+    this.rootViewContainer = viewContainerRef;
   }
 
-  open(id: string) {
-    this.modals.find(modal => modal.id === id).open();
+  addModal(modal: any, id?: number) {
+    const factory = this.factoryResolver.resolveComponentFactory(modal);
+    const component = factory.create(this.rootViewContainer.injector);
+    this.rootViewContainer.insert(component.hostView);
+
+    if (id) {
+      this.appendQueryStringToUrl(id);
+    }
   }
 
-  close(id: string) {
-    this.modals.find(modal => modal.id === id).close();
+  removeModal() {
+    this.rootViewContainer.clear();
+  }
+
+  private appendQueryStringToUrl(id: number) {
+    this.router.navigate([], {
+      queryParams: {
+        itemId: id
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 }

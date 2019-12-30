@@ -3,3 +3,10 @@
   [innerHTML]="pod.content.rendered"
  class="content">
 </div>
+<div class="items">
+  <du-project
+    *ngFor="let projectIdAndImage of weddingProjects"
+    [projectIdAndImage]="projectIdAndImage"
+    type="wedding">
+  </du-project>
+</div>

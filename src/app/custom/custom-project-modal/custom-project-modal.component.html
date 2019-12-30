@@ -1,8 +1,11 @@
-<du-modal-container id="custom-project">
-  <du-modal-container-title>
-    Custom Project
+<du-modal-container>
+  <du-modal-container-title [innerHTML]="project?.title.rendered">
   </du-modal-container-title>
   <du-modal-container-body>
-    Content for the custom project
+    <div
+      [innerHTML]="project?.content.rendered"
+      class="content">
+    </div>
+    <du-modal-gallery [imageList]="project?.gallery"></du-modal-gallery>
   </du-modal-container-body>
 </du-modal-container>

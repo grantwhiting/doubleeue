@@ -1,6 +1,8 @@
 import {Component, HostListener, Input} from '@angular/core';
 import {IProjectIdAndImage} from '../types/project';
 import {ModalService} from '../services/modal/modal.service';
+import {CustomProjectModalComponent} from '../custom/custom-project-modal/custom-project-modal.component';
+import {WeddingProjectModalComponent} from '../weddings/wedding-project-modal/wedding-project-modal.component';
 
 @Component({
   selector: 'du-project',
@@ -9,27 +11,14 @@ import {ModalService} from '../services/modal/modal.service';
 })
 export class ProjectComponent {
   @Input() projectIdAndImage: IProjectIdAndImage;
+  @Input() type: string;
 
   constructor(private modalService: ModalService) {}
 
   @HostListener('click')
   openProjectModal() {
-    this.modalService.open('custom-project');
+    this.type === 'wedding'
+      ? this.modalService.addModal(WeddingProjectModalComponent, this.projectIdAndImage.id)
+      : this.modalService.addModal(CustomProjectModalComponent, this.projectIdAndImage.id);
   }
-
-  // project: IProject;
-
-  // private unsubscribe: Subject<void> = new Subject();
-  //
-  // constructor(private projectService: ProjectsService) { }
-  //
-  // ngOnInit() {
-  //   this.projectService.getProjectById(this.projectIdAndImage.id)
-  //     .pipe(takeUntil(this.unsubscribe))
-  //     .subscribe(project => this.project = project);
-  // }
-  //
-  // ngOnDestroy() {
-  //   this.unsubscribe.next();
-  // }
 }

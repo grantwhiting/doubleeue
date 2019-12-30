@@ -1,16 +1,16 @@
-import {AfterContentInit, Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IProject} from '../../types/project';
 import {Subject} from 'rxjs';
 import {ProjectsService} from '../../services/projects/projects.service';
-import {takeUntil} from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'du-custom-project-modal',
-  templateUrl: './custom-project-modal.component.html',
-  styleUrls: ['./custom-project-modal.component.scss']
+  selector: 'du-wedding-project-modal',
+  templateUrl: './wedding-project-modal.component.html',
+  styleUrls: ['./wedding-project-modal.component.scss']
 })
-export class CustomProjectModalComponent implements OnInit, AfterContentInit, OnDestroy {
+export class WeddingProjectModalComponent implements OnInit, OnDestroy {
   id: number;
   project: IProject;
 
@@ -25,9 +25,7 @@ export class CustomProjectModalComponent implements OnInit, AfterContentInit, On
     this.activatedRoute.queryParams
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(params => this.id = params.itemId);
-  }
 
-  ngAfterContentInit() {
     this.projectsService.getProjectById(this.id)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(project => this.project = project);

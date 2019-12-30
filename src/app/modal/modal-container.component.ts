@@ -13,49 +13,11 @@ export class ModalContainerBodyDirective {}
   templateUrl: './modal-container.component.html',
   styleUrls: ['./modal-container.component.scss']
 })
-export class ModalContainerComponent implements OnInit, OnDestroy {
-  @Input() id: string;
+export class ModalContainerComponent {
 
-  private readonly element: any;
+  constructor(private modalService: ModalService) {}
 
-  constructor(
-    private modalService: ModalService,
-    private el: ElementRef,
-    private componentFactoryResolver: ComponentFactoryResolver,
-    @Inject(DOCUMENT) private document: Document) {
-
-    this.element = el.nativeElement;
-  }
-
-  ngOnInit() {
-    if (!this.id) {
-      console.error('modal must have an id');
-      return;
-    }
-
-    this.document.body.append(this.element);
-
-    this.element.addEventListener('click', el => {
-      if (el.target.className === 'modal') {
-        this.close();
-      }
-    });
-
-    this.modalService.add((this));
-  }
-
-  ngOnDestroy() {
-    this.modalService.remove(this.id);
-    this.element.remove();
-  }
-
-  open(): void {
-    this.element.style.display = 'block';
-    this.document.body.classList.add('modal-open');
-  }
-
-  close(): void {
-    this.element.style.display = 'none';
-    this.document.body.classList.remove('modal-open');
+  closeModal() {
+    this.modalService.removeModal();
   }
 }

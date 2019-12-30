@@ -1,15 +1,58 @@
+// Global Imports
+@import 'colors';
+
+//
+//
+//
 .modal {
   overflow: auto;
   padding: 1.2em;
   background: lightgray;
+  z-index: 1;
+  position: absolute;
+  left: 10em;
+  right: 10em;
+  top: 10em;
 
   &__title {
-    border-bottom: 1px solid lightgray;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    border-bottom: 1px solid $color--03;
+    margin-bottom: 0.9em;
+    padding-bottom: 0.8em;
   }
 
   &__body {
+
+  }
+
+  &__close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    height: 2em;
+    width: 2em;
+    overflow: hidden;
+    cursor: pointer;
+
+    &::before {
+      transform: rotate(45deg);
+      left: -33%;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      left: 35%;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      border-top: 1px solid $color--03;
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0.7em;
+    }
 
   }
 
