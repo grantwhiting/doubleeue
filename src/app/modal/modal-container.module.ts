@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {
   ModalContainerBodyDirective,
-  ModalContainerComponent,
-  ModalContainerTitleDirective} from './modal-container.component';
+  ModalContainerComponent, ModalContainerFooterDirective,
+  ModalContainerTitleDirective
+} from './modal-container.component';
 import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
 import {CommonModule} from '@angular/common';
 
@@ -11,7 +12,8 @@ import {CommonModule} from '@angular/common';
     ModalContainerComponent,
     ModalContainerTitleDirective,
     ModalContainerBodyDirective,
-    ModalGalleryComponent
+    ModalGalleryComponent,
+    ModalContainerFooterDirective
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import {CommonModule} from '@angular/common';
     ModalContainerComponent,
     ModalContainerTitleDirective,
     ModalContainerBodyDirective,
-    ModalGalleryComponent
+    ModalGalleryComponent,
+    ModalContainerFooterDirective
   ]
 })
 export class ModalContainerModule {}

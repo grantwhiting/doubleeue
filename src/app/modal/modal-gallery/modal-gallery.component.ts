@@ -1,6 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {modalGalleryAnimation} from './modal-gallery.animation';
 import {IGalleryItem} from '../../types/gallery-item';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'du-modal-gallery',
@@ -8,9 +10,11 @@ import {IGalleryItem} from '../../types/gallery-item';
   styleUrls: ['./modal-gallery.component.scss'],
   animations: [modalGalleryAnimation]
 })
-export class ModalGalleryComponent {
+export class ModalGalleryComponent implements OnInit, OnDestroy {
   @Input() imageList: IGalleryItem[];
-  currentSelection = 0;
+  showNextTrigger = true;
+  showPrevTrigger = false;
+  currentSelectedIndex = 0;
   animationParams = {
     value: 'animationParams',
     params: {
@@ -19,24 +23,40 @@ export class ModalGalleryComponent {
     }
   };
 
+  private selectionSubject = new Subject<number>();
+  private unsubscribe = new Subject<void>();
+
   ngOnInit() {
-    console.log(this.imageList);
+    this.selectionSubject
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe({
+        next: value => {
+          this.showPrevTrigger = value !== 0;
+          this.showNextTrigger = value !== (this.imageList.length - 1);
+        }
+    });
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.next();
   }
 
   showNext() {
-    if (this.currentSelection > 1) {
+    if (this.currentSelectedIndex === (this.imageList.length - 1)) {
       return;
     }
-    this.currentSelection++;
+    this.currentSelectedIndex++;
+    this.selectionSubject.next(this.currentSelectedIndex);
     this.animationParams.params.start = '100';
     this.animationParams.params.leave = '-100';
   }
 
   showPrevious() {
-    if (this.currentSelection < 1) {
+    if (this.currentSelectedIndex === 0) {
       return;
     }
-    this.currentSelection--;
+    this.currentSelectedIndex--;
+    this.selectionSubject.next(this.currentSelectedIndex);
     this.animationParams.params.start = '-100';
     this.animationParams.params.leave = '100';
   }

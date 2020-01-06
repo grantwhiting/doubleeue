@@ -5,14 +5,18 @@
 //
 //
 .modal {
+  background: lightgray;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  max-width: 50em;
   overflow: auto;
   padding: 1.2em;
-  background: lightgray;
-  z-index: 1;
   position: absolute;
-  left: 10em;
-  right: 10em;
-  top: 10em;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 5em);
+  z-index: 1;
 
   &__title {
     border-bottom: 1px solid $color--03;
@@ -21,7 +25,7 @@
   }
 
   &__body {
-
+    flex: 1;
   }
 
   &__close {

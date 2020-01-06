@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './custom-project-modal.component.html',
   styleUrls: ['./custom-project-modal.component.scss']
 })
-export class CustomProjectModalComponent implements OnInit, AfterContentInit, OnDestroy {
+export class CustomProjectModalComponent implements OnInit, OnDestroy {
   id: number;
   project: IProject;
 
@@ -25,9 +25,7 @@ export class CustomProjectModalComponent implements OnInit, AfterContentInit, On
     this.activatedRoute.queryParams
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(params => this.id = params.itemId);
-  }
 
-  ngAfterContentInit() {
     this.projectsService.getProjectById(this.id)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(project => this.project = project);

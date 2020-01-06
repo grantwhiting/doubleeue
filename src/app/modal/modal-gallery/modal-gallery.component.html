@@ -1,14 +1,29 @@
-<div class="wrapper">
-  <ng-container [ngSwitch]="currentSelection">
+<div class="items">
+  <ng-container [ngSwitch]="currentSelectedIndex">
     <ng-container *ngFor="let image of imageList; let i = index">
       <div
         [@slide]="animationParams"
         *ngSwitchCase="i"
+        [style.backgroundImage]="'url(' + image.guid + ')'"
         class="item">
       </div>
     </ng-container>
   </ng-container>
 </div>
 
-<button (click)="showPrevious()">previous</button>
-<button (click)="showNext()">next</button>
+<button
+  *ngIf="showPrevTrigger"
+  (click)="showPrevious()"
+  class="
+    trigger
+    trigger--previous">
+  <span class="trigger__text">Previous</span>
+</button>
+<button
+  *ngIf="showNextTrigger"
+  (click)="showNext()"
+  class="
+    trigger
+    trigger--next">
+  <span class="trigger__text">Next</span>
+</button>
