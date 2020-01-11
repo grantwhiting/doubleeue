@@ -3,11 +3,13 @@ import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {IProduct} from '../types/product';
+import {cardAnimation} from '../animations/card.animation';
 
 @Component({
   selector: 'du-cards',
   templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss']
+  styleUrls: ['./cards.component.scss'],
+  animations: [cardAnimation]
 })
 export class CardsComponent implements OnInit, OnDestroy {
   pod: IProduct;

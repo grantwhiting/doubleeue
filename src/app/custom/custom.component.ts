@@ -1,37 +1,23 @@
-import {Component, Inject, OnDestroy, OnInit, ViewContainerRef} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {takeUntil} from 'rxjs/operators';
 import {IProduct} from '../types/product';
-import {ProjectsService} from '../services/projects/projects.service';
 import {IProjectIdAndImage} from '../types/project';
+import {cardAnimation} from '../animations/card.animation';
 
 @Component({
   selector: 'du-custom',
   templateUrl: './custom.component.html',
-  styleUrls: ['./custom.component.scss']
+  styleUrls: ['./custom.component.scss'],
+  animations: [cardAnimation]
 })
-export class CustomComponent implements OnInit, OnDestroy {
+export class CustomComponent implements OnInit {
   pod: IProduct;
-  customProjects: IProjectIdAndImage[];
+  commissionProjects: IProjectIdAndImage[];
 
-  private unsubscribe: Subject<void> = new Subject();
-
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private projectsService: ProjectsService) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.activatedRoute.data
-      .pipe(takeUntil(this.unsubscribe))
-      .subscribe(({ pod }) => this.pod = pod);
-
-    this.projectsService.getCustomProjects()
-      .pipe(takeUntil(this.unsubscribe))
-      .subscribe(projects => this.customProjects = projects);
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe.next();
+      .subscribe(({ data }) => Object.assign(this, {...data}));
   }
 }

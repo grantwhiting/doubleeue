@@ -20,12 +20,12 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
-    resolve: { pods: HomeResolver }
+    resolve: { pod: HomeResolver }
   },
   {
     path: 'weddings',
     component: WeddingsComponent,
-    resolve: { pod: WeddingsResolver }
+    resolve: { data: WeddingsResolver }
   },
   {
     path: 'cards',
@@ -35,7 +35,7 @@ export const routes: Routes = [
   {
     path: 'custom',
     component: CustomComponent,
-    resolve: { pod: CustomResolver }
+    resolve: { data: CustomResolver }
   },
   {
     path: 'about',

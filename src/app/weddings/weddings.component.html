@@ -1,9 +1,11 @@
 <h1 class="title">{{ pod.title.rendered }}</h1>
 <div
   [innerHTML]="pod.content.rendered"
- class="content">
+  class="content">
 </div>
-<div class="items">
+<div
+  @cardAnimation
+  class="items">
   <du-project
     *ngFor="let projectIdAndImage of weddingProjects"
     [projectIdAndImage]="projectIdAndImage"

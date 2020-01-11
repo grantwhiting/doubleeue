@@ -1,8 +1,8 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {modalGalleryAnimation} from './modal-gallery.animation';
 import {IGalleryItem} from '../../types/gallery-item';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {modalGalleryAnimation} from '../../animations/modal-gallery.animation';
 
 @Component({
   selector: 'du-modal-gallery',

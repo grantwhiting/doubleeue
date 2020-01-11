@@ -1,7 +1,7 @@
 import { style, trigger, transition, animate, state } from '@angular/animations';
 import { DEFAULT_TIMING } from './animation-constants';
 
-export const expandHeightShowHideAnimation = trigger('expandHeightShowHide', [
+export const expandHeighthShowHideAnimation = trigger('expandHeightShowHide', [
   state('expanded', style({
     height: '*'
   })),
