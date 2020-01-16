@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {NavigationService} from '../services/navigation/navigation.service';
-import {Subject} from 'rxjs';
+import {forkJoin, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {INavigationItems} from '../types/navigation-items';
 
@@ -19,12 +19,15 @@ export class NavigationComponent implements OnInit, OnDestroy {
   constructor(private navigationService: NavigationService) {}
 
   ngOnInit() {
-    this.navigationService.getMainNavItems()
+    forkJoin(
+      this.navigationService.getMainNavItems(),
+      this.navigationService.getProductsNavItems()
+    )
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe(items => this.navItems = items);
-    this.navigationService.getProductsNavItems()
-      .pipe(takeUntil(this.unsubscribe))
-      .subscribe(items => this.productNavItems = items);
+      .subscribe(data => {
+        this.navItems = data[0];
+        this.productNavItems = data[1];
+      });
   }
 
   ngOnDestroy() {

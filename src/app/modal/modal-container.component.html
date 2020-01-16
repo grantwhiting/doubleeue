@@ -1,4 +1,6 @@
-<div class="modal">
+<div
+  @modalFadeScaleEnterLeave
+  class="modal">
   <h2 class="modal__title">
     <ng-content select="du-modal-container-title"></ng-content>
   </h2>
@@ -14,6 +16,7 @@
   </div>
 </div>
 <div
+  @modalFadeEnterLeave
   (click)="closeModal()"
   class="background">
 </div>

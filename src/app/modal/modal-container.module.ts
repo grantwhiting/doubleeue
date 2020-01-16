@@ -6,6 +6,7 @@ import {
 } from './modal-container.component';
 import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
 import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {CommonModule} from '@angular/common';
     ModalContainerFooterDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ],
   exports: [
     ModalContainerComponent,

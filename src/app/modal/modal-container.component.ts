@@ -1,6 +1,6 @@
-import {Component, ComponentFactoryResolver, Directive, ElementRef, Inject, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Directive} from '@angular/core';
 import {ModalService} from '../services/modal/modal.service';
-import { DOCUMENT } from '@angular/common';
+import {modalFadeAnimation, modalFadeScaleAnimation} from '../animations/modal.animation';
 
 @Directive({ selector: 'du-modal-container-title' })
 export class ModalContainerTitleDirective {}
@@ -14,7 +14,8 @@ export class ModalContainerFooterDirective {}
 @Component({
   selector: 'du-modal-container',
   templateUrl: './modal-container.component.html',
-  styleUrls: ['./modal-container.component.scss']
+  styleUrls: ['./modal-container.component.scss'],
+  animations: [modalFadeScaleAnimation, modalFadeAnimation]
 })
 export class ModalContainerComponent {
 

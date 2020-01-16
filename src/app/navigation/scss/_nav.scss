@@ -30,6 +30,29 @@
     color: $color--01;
     cursor: pointer;
     text-decoration: none;
+    position: relative;
+    padding-bottom: 0.4em;
+    outline: none;
+
+    &::before {
+      transition: all 0.3s ease;
+      width: 0;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-top: 2px solid $color--05;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &:hover::before {
+      width: 160%;
+    }
+
+    &--active::before {
+      width: 100%;
+    }
 
     &--menu {
       padding-right: 13px;

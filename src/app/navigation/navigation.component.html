@@ -33,6 +33,7 @@
       class="nav__item">
       <a
         [routerLink]="item.url.split('/')[navItems.length + 2]"
+        routerLinkActive="nav__link--active"
         tabindex="0"
         class="nav__link">
         {{ item.title }}

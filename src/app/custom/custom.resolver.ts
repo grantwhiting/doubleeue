@@ -7,13 +7,13 @@ import {ProjectsService} from '../services/projects/projects.service';
 import {map} from 'rxjs/operators';
 import {IProjectIdAndImage} from '../types/project';
 
-interface ICommossionsComponentType {
+interface ICommissionsComponentType {
   pod: IProduct;
   commissionProjects: IProjectIdAndImage[];
 }
 
 @Injectable()
-export class CustomResolver implements Resolve<ICommossionsComponentType> {
+export class CustomResolver implements Resolve<ICommissionsComponentType> {
 
   private customProductId = 15;
 
