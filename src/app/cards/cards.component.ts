@@ -4,12 +4,13 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {IProduct} from '../types/product';
 import {cardAnimation} from '../animations/card.animation';
+import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 
 @Component({
   selector: 'du-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss'],
-  animations: [cardAnimation]
+  animations: [cardAnimation, fadeEnterLeaveAnimation]
 })
 export class CardsComponent implements OnInit, OnDestroy {
   pod: IProduct;

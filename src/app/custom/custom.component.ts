@@ -3,12 +3,13 @@ import {ActivatedRoute} from '@angular/router';
 import {IProduct} from '../types/product';
 import {IProjectIdAndImage} from '../types/project';
 import {cardAnimation} from '../animations/card.animation';
+import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 
 @Component({
   selector: 'du-custom',
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.scss'],
-  animations: [cardAnimation]
+  animations: [cardAnimation, fadeEnterLeaveAnimation]
 })
 export class CustomComponent implements OnInit {
   pod: IProduct;

@@ -1,5 +1,6 @@
 // Global imports
 @import 'breakpoints';
+@import 'colors';
 
 //
 //
@@ -20,7 +21,7 @@
       grid-area: inputLeft;
     }
 
-    &:last-of-type {
+    &:nth-of-type(2) {
       grid-area: inputRight;
     }
 
@@ -44,10 +45,31 @@
 @include sm {
 
   .form {
-    grid: repeat(3, auto) / repeat(2, 1fr);
-    grid-template-areas: "inputLeft inputRight"
+    grid: repeat(4, auto) / repeat(2, 1fr);
+    grid-template-areas: "inputLeft inputLeft"
+                        "inputRight inputRight"
                         "textarea textarea"
                         "button .";
   }
 
+}
+
+//
+//
+//
+// Material overrides
+// _________________________________________________________________________________________
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $color--05 !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: $color--05 !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: $color--05 !important;;
 }

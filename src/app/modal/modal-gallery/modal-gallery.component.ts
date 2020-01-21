@@ -3,12 +3,13 @@ import {IGalleryItem} from '../../types/gallery-item';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {modalGalleryAnimation} from '../../animations/modal-gallery.animation';
+import {fadeEnterLeaveAnimation} from '../../animations/fade-enter-leave.animation';
 
 @Component({
   selector: 'du-modal-gallery',
   templateUrl: './modal-gallery.component.html',
   styleUrls: ['./modal-gallery.component.scss'],
-  animations: [modalGalleryAnimation]
+  animations: [modalGalleryAnimation, fadeEnterLeaveAnimation]
 })
 export class ModalGalleryComponent implements OnInit, OnDestroy {
   @Input() imageList: IGalleryItem[];

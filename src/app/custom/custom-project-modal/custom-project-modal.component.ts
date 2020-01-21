@@ -7,8 +7,7 @@ import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'du-custom-project-modal',
-  templateUrl: './custom-project-modal.component.html',
-  styleUrls: ['./custom-project-modal.component.scss']
+  templateUrl: './custom-project-modal.component.html'
 })
 export class CustomProjectModalComponent implements OnInit, OnDestroy {
   id: number;

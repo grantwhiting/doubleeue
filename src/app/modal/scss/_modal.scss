@@ -1,5 +1,6 @@
 // Global Imports
 @import 'colors';
+@import 'breakpoints';
 
 //
 //
@@ -8,13 +9,11 @@
   background: lightgray;
   display: flex;
   flex-direction: column;
-  left: 50%;
+  height: calc(100vh - 5em);
+  position: relative;
   max-width: 50em;
   overflow: auto;
   padding: 1.2em;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
   width: calc(100% - 5em);
   z-index: 1;
 
@@ -58,6 +57,14 @@
       top: 0.7em;
     }
 
+  }
+
+}
+
+@include md {
+
+  .modal {
+    height: auto;
   }
 
 }

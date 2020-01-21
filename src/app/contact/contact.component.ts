@@ -5,11 +5,14 @@ import {takeUntil} from 'rxjs/operators';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FormService} from '../services/form/form.service';
 import {IPage} from '../types/page';
+import {fadeScaleEnterLeaveAnimation} from '../animations/fade-scale-enter-leave.animation';
+import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 
 @Component({
   selector: 'du-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: [fadeScaleEnterLeaveAnimation, fadeEnterLeaveAnimation]
 })
 export class ContactComponent implements OnInit, OnDestroy {
   form: FormGroup;
@@ -32,7 +35,6 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.activatedRoute.data
-      .pipe(takeUntil(this.unsubscribe))
       .subscribe(({ page }) => this.pageContent = page);
   }
 
@@ -49,7 +51,13 @@ export class ContactComponent implements OnInit, OnDestroy {
       return;
     }
     this.formService.postFormData(this.form.value)
-      .subscribe(response => console.log(response));
-    this.showConfirmation = true;
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(response => {
+        console.log(response);
+        if (response) {
+          this.showConfirmation = true;
+          this.form.reset();
+        }
+      });
   }
 }

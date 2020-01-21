@@ -1,5 +1,10 @@
-<h1 class="title">{{ pod.title.rendered }}</h1>
+<h1
+  @fadeEnterLeave
+  class="title">
+  {{ pod.title.rendered }}
+</h1>
 <div
+  @fadeEnterLeave
   [innerHTML]="pod.content.rendered"
   class="content">
 </div>

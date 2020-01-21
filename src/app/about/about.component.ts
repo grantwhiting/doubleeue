@@ -3,11 +3,13 @@ import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {IPage} from '../types/page';
+import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 
 @Component({
   selector: 'du-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  animations: [fadeEnterLeaveAnimation]
 })
 export class AboutComponent implements OnInit, OnDestroy {
   pageContent: IPage;

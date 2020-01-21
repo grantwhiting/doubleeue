@@ -1,43 +1,58 @@
-<ng-container *ngIf="!showConfirmation; else confirmation">
+<div @fadeEnterLeave>
   <div
-    [innerHTML]="pageContent.content.rendered"
-    class="content">
-  </div>
-  <form
-    [formGroup]="form"
-    class="form">
-    <mat-form-field class="form__input">
-      <input
-        matInput
-        placeholder="Name"
-        type="text"
-        formControlName="contactName" />
-    </mat-form-field>
-    <mat-form-field class="form__input">
-      <input
-        matInput
-        placeholder="Email"
-        type="email"
-        formControlName="contactEmail" />
-    </mat-form-field>
-    <mat-form-field class="form__textarea">
+    *ngIf="!showConfirmation; else confirmation"
+    @fadeScaleEnterLeave>
+    <div
+      [innerHTML]="pageContent.content.rendered"
+      class="content">
+    </div>
+    <form
+      [formGroup]="form"
+      class="form">
+      <mat-form-field class="form__input">
+        <input
+          matInput
+          placeholder="Name"
+          type="text"
+          formControlName="contactName" />
+        <mat-error *ngIf="form.get('contactName').hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form__input">
+        <input
+          matInput
+          placeholder="Email"
+          type="email"
+          formControlName="contactEmail" />
+        <mat-error *ngIf="form.get('contactEmail').hasError('email') && !form.get('contactEmail').hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="form.get('contactEmail').hasError('required')">
+          Email is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form__textarea">
     <textarea
       matInput
       placeholder="Message"
       formControlName="contactMessage">
   </textarea>
-    </mat-form-field>
-    <button
-      mat-raised-button
-      (click)="postForm()"
-      type="button"
-      class="form__button">
-      Submit
-    </button>
-  </form>
-</ng-container>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        (click)="postForm()"
+        type="button"
+        class="form__button">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
 <ng-template #confirmation>
-  <div class="confirmation">
+  <div
+    @fadeScaleEnterLeave
+    class="confirmation">
     <h2>Thank you!</h2>
     <h3>Your message has been sent</h3>
     <button

@@ -3,12 +3,13 @@ import {ActivatedRoute} from '@angular/router';
 import {IProduct} from '../types/product';
 import {IProjectIdAndImage} from '../types/project';
 import {cardAnimation} from '../animations/card.animation';
+import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 
 @Component({
   selector: 'du-weddings',
   templateUrl: './weddings.component.html',
   styleUrls: ['./weddings.component.scss'],
-  animations: [cardAnimation]
+  animations: [cardAnimation, fadeEnterLeaveAnimation]
 })
 export class WeddingsComponent implements OnInit {
   pod: IProduct;
