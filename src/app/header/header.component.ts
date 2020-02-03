@@ -16,6 +16,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 
   ngAfterViewInit(): void {

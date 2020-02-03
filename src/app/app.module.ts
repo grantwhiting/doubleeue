@@ -34,7 +34,7 @@ import {WeddingProjectModalComponent} from './weddings/wedding-project-modal/wed
     HeaderComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

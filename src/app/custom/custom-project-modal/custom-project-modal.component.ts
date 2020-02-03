@@ -32,5 +32,6 @@ export class CustomProjectModalComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }

@@ -40,6 +40,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 
   showForm() {

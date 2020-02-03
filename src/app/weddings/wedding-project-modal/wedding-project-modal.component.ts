@@ -33,5 +33,6 @@ export class WeddingProjectModalComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }

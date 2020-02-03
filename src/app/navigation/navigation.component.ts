@@ -32,6 +32,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 
   toggleMobileNav(): void {
