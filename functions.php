@@ -8,12 +8,20 @@
      */
     function include_angular_app( $dist_path )
     {
+        /*
+        'runtime.js',
+        'polyfills.js',
+        'styles.js',
+        'vendor.js',
+        'main.js'
+        */
         $scripts = array(
-            'runtime.js',
-            'polyfills.js',
-            'styles.js',
-            'vendor.js',
-            'main.js'
+          'main-es5.js',
+          'main-es2015.js',
+          'polyfills-es5.js',
+          'polyfills-es2015.js',
+          'runtime-es5.js',
+          'runtime-es2015.js'
         );
         echo "<app-root></app-root>";
         foreach ( $scripts as $script ) {

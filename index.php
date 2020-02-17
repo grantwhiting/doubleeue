@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <?php include_angular_app(get_stylesheet_directory_uri() . '/dist/doubleeue'); ?>
+  <?php include_angular_app(get_stylesheet_directory_uri() . '/dist/browser'); ?>
 </body>
 <script>
 window.nonce = "<?php echo wp_create_nonce( 'wp_rest' ); ?>";
