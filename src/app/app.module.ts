@@ -17,12 +17,12 @@ import { HeaderComponent } from './header/header.component';
 import {AboutModule} from './about/about.module';
 import {ContactModule} from './contact/contact.module';
 import {CardsModule} from './cards/cards.module';
-import {CustomModule} from './custom/custom.module';
 import {WeddingsModule} from './weddings/weddings.module';
 import {WindowRef} from './services/window/window.service';
 import {NavigationService} from './services/navigation/navigation.service';
-import {CustomProjectModalComponent} from './custom/custom-project-modal/custom-project-modal.component';
 import {WeddingProjectModalComponent} from './weddings/wedding-project-modal/wedding-project-modal.component';
+import {CommissionProjectModalComponent} from './commissions/commission-project-modal/commission-project-modal.component';
+import {CommissionsModule} from './commissions/commissions.module';
 
 @NgModule({
   declarations: [
@@ -45,9 +45,9 @@ import {WeddingProjectModalComponent} from './weddings/wedding-project-modal/wed
     AboutModule,
     ContactModule,
     CardsModule,
-    CustomModule,
     WeddingsModule,
-    MatMenuModule
+    MatMenuModule,
+    CommissionsModule
   ],
   bootstrap: [AppComponent],
   providers: [
@@ -55,8 +55,8 @@ import {WeddingProjectModalComponent} from './weddings/wedding-project-modal/wed
     NavigationService
   ],
   entryComponents: [
-    CustomProjectModalComponent,
-    WeddingProjectModalComponent
+    WeddingProjectModalComponent,
+    CommissionProjectModalComponent
   ]
 })
 export class AppModule { }

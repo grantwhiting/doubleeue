@@ -1,8 +1,8 @@
 import {Component, HostListener, Input} from '@angular/core';
 import {IProjectIdAndImage} from '../types/project';
 import {ModalService} from '../services/modal/modal.service';
-import {CustomProjectModalComponent} from '../custom/custom-project-modal/custom-project-modal.component';
 import {WeddingProjectModalComponent} from '../weddings/wedding-project-modal/wedding-project-modal.component';
+import {CommissionProjectModalComponent} from '../commissions/commission-project-modal/commission-project-modal.component';
 
 @Component({
   selector: 'du-project',
@@ -19,6 +19,6 @@ export class ProjectComponent {
   openProjectModal() {
     this.type === 'wedding'
       ? this.modalService.addModal(WeddingProjectModalComponent, this.projectIdAndImage.id)
-      : this.modalService.addModal(CustomProjectModalComponent, this.projectIdAndImage.id);
+      : this.modalService.addModal(CommissionProjectModalComponent, this.projectIdAndImage.id);
   }
 }

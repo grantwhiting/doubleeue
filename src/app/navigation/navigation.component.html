@@ -12,27 +12,27 @@
   <ul class="nav__list">
     <li class="nav__item">
       <a
-        [matMenuTriggerFor]="menu"
+        routerLink="/"
+        routerLinkActive="nav__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
         tabindex="0"
-        class="
-          nav__link
-          nav__link--menu">
+        class="nav__link">
+        Home
+      </a>
+    </li>
+    <li class="nav__item">
+      <a
+        href="https://www.etsy.com/shop/DoubleEueDesignCo"
+        tabindex="0"
+        class="nav__link">
         Shop
       </a>
-      <mat-menu #menu="matMenu">
-        <button
-          *ngFor="let item of productNavItems"
-          mat-menu-item
-          [routerLink]="item.url.split('/')[productNavItems.length + 2]">
-          {{ item.title }}
-        </button>
-      </mat-menu>
     </li>
     <li
-      *ngFor="let item of navItems"
+      *ngFor="let item of navItems$ | async"
       class="nav__item">
       <a
-        [routerLink]="item.url.split('/')[navItems.length + 2]"
+        [routerLink]="item.url"
         routerLinkActive="nav__link--active"
         tabindex="0"
         class="nav__link">

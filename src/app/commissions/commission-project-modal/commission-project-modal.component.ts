@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IProject} from '../../types/project';
 import {Subject} from 'rxjs';
 import {ProjectsService} from '../../services/projects/projects.service';
@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   selector: 'du-custom-project-modal',
   templateUrl: './custom-project-modal.component.html'
 })
-export class CustomProjectModalComponent implements OnInit, OnDestroy {
+export class CommissionProjectModalComponent implements OnInit, OnDestroy {
   id: number;
   project: IProject;
 

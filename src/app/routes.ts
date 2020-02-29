@@ -4,13 +4,13 @@ import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {WeddingsComponent} from './weddings/weddings.component';
 import {CardsComponent} from './cards/cards.component';
-import {CustomComponent} from './custom/custom.component';
 import {HomeResolver} from './home/home.resolver';
 import {AboutResolver} from './about/about.resolver';
 import {ContactResolver} from './contact/contact.resolver';
 import {WeddingsResolver} from './weddings/weddings.resolver';
 import {CardsResolver} from './cards/cards.resolver';
-import {CustomResolver} from './custom/custom.resolver';
+import {CommissionsComponent} from './commissions/commissions.component';
+import {CommissionsResolver} from './commissions/commissions.resolver';
 
 export const routes: Routes = [
   { path: 'product/cards', redirectTo: 'cards', pathMatch: 'full' },
@@ -33,9 +33,9 @@ export const routes: Routes = [
     resolve: { pod: CardsResolver }
   },
   {
-    path: 'custom',
-    component: CustomComponent,
-    resolve: { data: CustomResolver }
+    path: 'commissions',
+    component: CommissionsComponent,
+    resolve: { data: CommissionsResolver }
   },
   {
     path: 'about',

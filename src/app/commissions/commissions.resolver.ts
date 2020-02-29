@@ -13,9 +13,9 @@ interface ICommissionsComponentType {
 }
 
 @Injectable()
-export class CustomResolver implements Resolve<ICommissionsComponentType> {
+export class CommissionsResolver implements Resolve<ICommissionsComponentType> {
 
-  private customProductId = 15;
+  private commissionsProductId = 15;
 
   constructor(
     private productsService: ProductsService,
@@ -23,8 +23,8 @@ export class CustomResolver implements Resolve<ICommissionsComponentType> {
 
   resolve() {
     return forkJoin(
-      this.productsService.getProductByProductId(this.customProductId),
-      this.projectsService.getCustomProjects()
+      this.productsService.getProductByProductId(this.commissionsProductId),
+      this.projectsService.getCommissionProjects()
     ).pipe(map(allData => {
       return {
         pod: allData[0],

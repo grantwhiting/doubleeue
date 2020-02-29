@@ -11,7 +11,7 @@ import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation'
   styleUrls: ['./custom.component.scss'],
   animations: [cardAnimation, fadeEnterLeaveAnimation]
 })
-export class CustomComponent implements OnInit {
+export class CommissionsComponent implements OnInit {
   pod: IProduct;
   commissionProjects: IProjectIdAndImage[];
 
