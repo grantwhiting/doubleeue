@@ -14,6 +14,6 @@
   <du-project
     *ngFor="let projectIdAndImage of weddingProjects"
     [projectIdAndImage]="projectIdAndImage"
-    type="wedding">
+    [type]="modalTypeEnum.WEDDING">
   </du-project>
 </div>

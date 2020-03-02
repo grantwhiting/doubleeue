@@ -14,7 +14,7 @@ import {CommissionsResolver} from './commissions/commissions.resolver';
 
 export const routes: Routes = [
   { path: 'product/cards', redirectTo: 'cards', pathMatch: 'full' },
-  { path: 'product/custom', redirectTo: 'custom', pathMatch: 'full' },
+  { path: 'product/commissions', redirectTo: 'commissions', pathMatch: 'full' },
   { path: 'product/weddings', redirectTo: 'weddings', pathMatch: 'full' },
   {
     path: '',

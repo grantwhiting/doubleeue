@@ -1,4 +1,6 @@
 <div
+  [duModalTrigger]="type === modalTypeEnum.WEDDING ?  weddingProjectModal : commissionProjectModal"
+  [modalContext]="{ id: this.projectIdAndImage.id }"
   tabindex="0"
   class="project">
   <h3 class="project__title">

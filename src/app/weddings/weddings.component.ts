@@ -4,6 +4,7 @@ import {IProduct} from '../types/product';
 import {IProjectIdAndImage} from '../types/project';
 import {cardAnimation} from '../animations/card.animation';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
+import {ProjectModalTypeEnum} from '../types/modal-type.enum';
 
 @Component({
   selector: 'du-weddings',
@@ -14,6 +15,7 @@ import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation'
 export class WeddingsComponent implements OnInit {
   pod: IProduct;
   weddingProjects: IProjectIdAndImage[];
+  modalTypeEnum = ProjectModalTypeEnum;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 

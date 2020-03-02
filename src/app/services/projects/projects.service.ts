@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {IProject, IProjectIdAndImage} from '../../types/project';
-import {commossionProjectsApi, projectsApi, weddingProjectsApi} from '../apis';
+import {commissionProjectsApi, projectsApi, weddingProjectsApi} from '../apis';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class ProjectsService {
   }
 
   getCommissionProjects(): Observable<IProjectIdAndImage[]> {
-    return this.http.get<IProjectIdAndImage[]>(commossionProjectsApi);
+    return this.http.get<IProjectIdAndImage[]>(commissionProjectsApi);
   }
 
 }

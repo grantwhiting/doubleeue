@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {ProjectComponent} from './project.component';
-import {ModalService} from '../services/modal/modal.service';
+import {ModalTriggerModule} from '../services/modal/modal-trigger/modal-trigger.module';
 
 @NgModule({
+  imports: [ModalTriggerModule],
   declarations: [ProjectComponent],
-  exports: [ProjectComponent],
-  providers: [ModalService]
+  exports: [ProjectComponent]
 })
 export class ProjectModule {}

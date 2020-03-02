@@ -4,16 +4,18 @@ import {IProduct} from '../types/product';
 import {IProjectIdAndImage} from '../types/project';
 import {cardAnimation} from '../animations/card.animation';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
+import {ProjectModalTypeEnum} from '../types/modal-type.enum';
 
 @Component({
-  selector: 'du-custom',
-  templateUrl: './custom.component.html',
-  styleUrls: ['./custom.component.scss'],
+  selector: 'du-commissions',
+  templateUrl: './commissions.component.html',
+  styleUrls: ['./commissions.component.scss'],
   animations: [cardAnimation, fadeEnterLeaveAnimation]
 })
 export class CommissionsComponent implements OnInit {
   pod: IProduct;
   commissionProjects: IProjectIdAndImage[];
+  modalTypeEnum = ProjectModalTypeEnum;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 

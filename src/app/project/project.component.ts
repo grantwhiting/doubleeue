@@ -1,8 +1,8 @@
-import {Component, HostListener, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {IProjectIdAndImage} from '../types/project';
-import {ModalService} from '../services/modal/modal.service';
 import {WeddingProjectModalComponent} from '../weddings/wedding-project-modal/wedding-project-modal.component';
 import {CommissionProjectModalComponent} from '../commissions/commission-project-modal/commission-project-modal.component';
+import {ProjectModalTypeEnum} from '../types/modal-type.enum';
 
 @Component({
   selector: 'du-project',
@@ -12,13 +12,7 @@ import {CommissionProjectModalComponent} from '../commissions/commission-project
 export class ProjectComponent {
   @Input() projectIdAndImage: IProjectIdAndImage;
   @Input() type: string;
-
-  constructor(private modalService: ModalService) {}
-
-  @HostListener('click')
-  openProjectModal() {
-    this.type === 'wedding'
-      ? this.modalService.addModal(WeddingProjectModalComponent, this.projectIdAndImage.id)
-      : this.modalService.addModal(CommissionProjectModalComponent, this.projectIdAndImage.id);
-  }
+  commissionProjectModal = CommissionProjectModalComponent;
+  weddingProjectModal = WeddingProjectModalComponent;
+  modalTypeEnum = ProjectModalTypeEnum;
 }

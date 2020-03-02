@@ -4,12 +4,13 @@ import {WeddingsComponent} from './weddings.component';
 import {WeddingsResolver} from './weddings.resolver';
 import {ProjectModule} from '../project/project.module';
 import { WeddingProjectModalComponent } from './wedding-project-modal/wedding-project-modal.component';
-import {ModalContainerModule} from '../modal/modal-container.module';
+import {WeddingProjectModalModule} from './wedding-project-modal/wedding-project-modal.module';
 
 @NgModule({
-  imports: [CommonModule, ProjectModule, ModalContainerModule],
-  declarations: [ WeddingsComponent, WeddingProjectModalComponent ],
-  exports: [ WeddingsComponent ],
-  providers: [ WeddingsResolver ]
+  imports: [CommonModule, ProjectModule, WeddingProjectModalModule],
+  declarations: [WeddingsComponent],
+  exports: [WeddingsComponent],
+  providers: [WeddingsResolver],
+  entryComponents: [WeddingProjectModalComponent]
 })
 export class WeddingsModule { }

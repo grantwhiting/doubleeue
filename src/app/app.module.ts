@@ -20,8 +20,6 @@ import {CardsModule} from './cards/cards.module';
 import {WeddingsModule} from './weddings/weddings.module';
 import {WindowRef} from './services/window/window.service';
 import {NavigationService} from './services/navigation/navigation.service';
-import {WeddingProjectModalComponent} from './weddings/wedding-project-modal/wedding-project-modal.component';
-import {CommissionProjectModalComponent} from './commissions/commission-project-modal/commission-project-modal.component';
 import {CommissionsModule} from './commissions/commissions.module';
 
 @NgModule({
@@ -34,7 +32,7 @@ import {CommissionsModule} from './commissions/commissions.module';
     HeaderComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -53,10 +51,6 @@ import {CommissionsModule} from './commissions/commissions.module';
   providers: [
     WindowRef,
     NavigationService
-  ],
-  entryComponents: [
-    WeddingProjectModalComponent,
-    CommissionProjectModalComponent
   ]
 })
 export class AppModule { }

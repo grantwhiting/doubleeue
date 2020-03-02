@@ -35,28 +35,13 @@
         ) );
     });
 
-
-    //
-    //
-    // get products navigation items from wp backend
-    function get_products_nav() {
-        return wp_get_nav_menu_items('products-nav');
-    }
-
-    add_action( 'rest_api_init', function () {
-        register_rest_route( 'routes', '/products', array(
-            'methods' => 'GET',
-            'callback' => 'get_products_nav',
-        ) );
-    });
-
     //
     //
     // make custom endpoint for getting only the images and ids of the projects pod items
-    function get_custom_projects() {
+    function get_commission_projects() {
         $params = array(
             'limit' => -1,
-            'where' => 'project_type.slug = "custom" '
+            'where' => 'project_type.slug = "commission" '
         );
 
         $pods = pods( 'project', $params );
@@ -78,9 +63,9 @@
     }
 
     add_action( 'rest_api_init', function() {
-        register_rest_route( 'pods', '/custom', array(
+        register_rest_route( 'pods', '/commissions', array(
             'methods' => 'GET',
-            'callback' => 'get_custom_projects'
+            'callback' => 'get_commission_projects'
         ) );
     } );
 

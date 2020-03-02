@@ -1,15 +1,13 @@
 import {ComponentFactoryResolver, Inject, Injectable, ViewContainerRef} from '@angular/core';
 import {Router} from '@angular/router';
+import {KeyValueMap} from '../../types/form-data.type';
 
 @Injectable()
 export class ModalService {
   factoryResolver: ComponentFactoryResolver;
   rootViewContainer: ViewContainerRef;
 
-  constructor(
-    @Inject(ComponentFactoryResolver) factoryResolver,
-    private router: Router) {
-
+  constructor(@Inject(ComponentFactoryResolver) factoryResolver) {
     this.factoryResolver = factoryResolver;
   }
 
@@ -17,26 +15,17 @@ export class ModalService {
     this.rootViewContainer = viewContainerRef;
   }
 
-  addModal(modal: any, id?: number) {
+  open(modal: any, context: KeyValueMap) {
     const factory = this.factoryResolver.resolveComponentFactory(modal);
     const component = factory.create(this.rootViewContainer.injector);
     this.rootViewContainer.insert(component.hostView);
 
-    if (id) {
-      this.appendQueryStringToUrl(id);
+    if (context) {
+      Object.assign(component.instance, context);
     }
   }
 
-  removeModal() {
+  close() {
     this.rootViewContainer.clear();
-  }
-
-  private appendQueryStringToUrl(id: number) {
-    this.router.navigate([], {
-      queryParams: {
-        itemId: id
-      },
-      queryParamsHandling: 'merge'
-    });
   }
 }

@@ -22,6 +22,6 @@ export class ModalContainerComponent {
   constructor(private modalService: ModalService) {}
 
   closeModal() {
-    this.modalService.removeModal();
+    this.modalService.close();
   }
 }

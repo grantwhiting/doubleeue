@@ -14,6 +14,6 @@
   <du-project
     *ngFor="let projectIdAndImage of commissionProjects"
     [projectIdAndImage]="projectIdAndImage"
-    type="custom">
+    [type]="modalTypeEnum.COMMISSION">
   </du-project>
 </div>

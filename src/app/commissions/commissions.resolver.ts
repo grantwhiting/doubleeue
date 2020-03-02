@@ -15,7 +15,7 @@ interface ICommissionsComponentType {
 @Injectable()
 export class CommissionsResolver implements Resolve<ICommissionsComponentType> {
 
-  private commissionsProductId = 15;
+  private commissionsProductId = 113;
 
   constructor(
     private productsService: ProductsService,
@@ -26,6 +26,7 @@ export class CommissionsResolver implements Resolve<ICommissionsComponentType> {
       this.productsService.getProductByProductId(this.commissionsProductId),
       this.projectsService.getCommissionProjects()
     ).pipe(map(allData => {
+      console.log(allData);
       return {
         pod: allData[0],
         commissionProjects: allData[1]
