@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {IProject} from '../../types/project';
+import {IProject} from '../../types/project.type';
 import {Subject} from 'rxjs';
 import {ProjectsService} from '../../services/projects/projects.service';
 import {takeUntil} from 'rxjs/operators';

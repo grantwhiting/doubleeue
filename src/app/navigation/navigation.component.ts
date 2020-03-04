@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {NavigationService} from '../services/navigation/navigation.service';
 import {Observable} from 'rxjs';
-import {INavigationItem} from '../types/navigation-items';
+import {INavigationItem} from '../types/navigation-items.type';
 
 @Component({
   selector: 'du-navigation',

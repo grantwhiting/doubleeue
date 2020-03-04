@@ -3,12 +3,10 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {WeddingsComponent} from './weddings/weddings.component';
-import {CardsComponent} from './cards/cards.component';
 import {HomeResolver} from './home/home.resolver';
 import {AboutResolver} from './about/about.resolver';
 import {ContactResolver} from './contact/contact.resolver';
 import {WeddingsResolver} from './weddings/weddings.resolver';
-import {CardsResolver} from './cards/cards.resolver';
 import {CommissionsComponent} from './commissions/commissions.component';
 import {CommissionsResolver} from './commissions/commissions.resolver';
 
@@ -20,17 +18,12 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
-    resolve: { pod: HomeResolver }
+    resolve: { data: HomeResolver }
   },
   {
     path: 'weddings',
     component: WeddingsComponent,
     resolve: { data: WeddingsResolver }
-  },
-  {
-    path: 'cards',
-    component: CardsComponent,
-    resolve: { pod: CardsResolver }
   },
   {
     path: 'commissions',

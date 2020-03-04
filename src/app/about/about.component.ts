@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {IPage} from '../types/page';
+import {IPage} from '../types/page.type';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 
 @Component({

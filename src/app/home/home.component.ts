@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Subject} from 'rxjs';
-import { IProduct } from '../types/product';
-import {takeUntil} from 'rxjs/operators';
 import {cardAnimation} from '../animations/card.animation';
+import {ITestimonial} from '../types/testimonial.type';
+import {IBanner} from '../types/banner.type';
 
 @Component({
   selector: 'du-home',
@@ -11,21 +10,14 @@ import {cardAnimation} from '../animations/card.animation';
   styleUrls: ['./home.component.scss'],
   animations: [cardAnimation]
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  products: IProduct[];
-
-  private unsubscribe: Subject<void> = new Subject();
+export class HomeComponent implements OnInit {
+  testimonials: ITestimonial[];
+  banner: IBanner[];
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.data
-      .pipe(takeUntil(this.unsubscribe))
-      .subscribe(({ pod }) => this.products = pod);
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
+      .subscribe(({ data }) => Object.assign(this, {...data}));
   }
 }

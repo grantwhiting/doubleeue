@@ -1,6 +1,6 @@
 import {ComponentFactoryResolver, Inject, Injectable, ViewContainerRef} from '@angular/core';
 import {Router} from '@angular/router';
-import {KeyValueMap} from '../../types/form-data.type';
+import {KeyValueMap} from '../../types/map.type';
 
 @Injectable()
 export class ModalService {

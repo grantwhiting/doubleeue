@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {IProduct} from '../types/product';
-import {IProjectIdAndImage} from '../types/project';
+import {IProduct} from '../types/product.type';
+import {IProjectIdAndImage} from '../types/project.type';
 import {cardAnimation} from '../animations/card.animation';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 import {ProjectModalTypeEnum} from '../types/modal-type.enum';

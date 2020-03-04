@@ -4,8 +4,8 @@ import {ProductsService} from '../services/products/products.service';
 import {forkJoin} from 'rxjs';
 import {ProjectsService} from '../services/projects/projects.service';
 import {map} from 'rxjs/operators';
-import {IProduct} from '../types/product';
-import {IProjectIdAndImage} from '../types/project';
+import {IProduct} from '../types/product.type';
+import {IProjectIdAndImage} from '../types/project.type';
 
 interface IWeddingComponentType {
   pod: IProduct;

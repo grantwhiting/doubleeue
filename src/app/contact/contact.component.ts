@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {takeUntil} from 'rxjs/operators';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FormService} from '../services/form/form.service';
-import {IPage} from '../types/page';
+import {IPage} from '../types/page.type';
 import {fadeScaleEnterLeaveAnimation} from '../animations/fade-scale-enter-leave.animation';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 

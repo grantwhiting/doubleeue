@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Resolve} from '@angular/router';
 import {ProductsService} from '../services/products/products.service';
-import {IProduct} from '../types/product';
+import {IProduct} from '../types/product.type';
 
 @Injectable()
 export class CardsResolver implements Resolve<IProduct> {

@@ -1,5 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {IGalleryItem} from '../../types/gallery-item';
+import {IGalleryItem} from '../../types/gallery-item.type';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {modalGalleryAnimation} from '../../animations/modal-gallery.animation';

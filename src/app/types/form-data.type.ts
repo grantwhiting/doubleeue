@@ -1,11 +1,5 @@
-export interface KeyValueMap {
-  [key: string]: unknown;
-}
-
-export interface StringMap {
-  [key: string]: string;
-}
-
-export interface NumberMap {
-  [key: string]: number;
+export interface GeneralForm {
+  contactName: string;
+  contactEmail: string;
+  contactMessage: string;
 }

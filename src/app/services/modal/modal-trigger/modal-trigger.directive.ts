@@ -1,6 +1,6 @@
 import {Directive, HostListener, Input, Type} from '@angular/core';
 import {ModalService} from '../modal.service';
-import {KeyValueMap} from '../../../types/form-data.type';
+import {KeyValueMap} from '../../../types/map.type';
 
 @Directive({
   selector: '[duModalTrigger]'

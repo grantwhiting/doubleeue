@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IProject, IProjectIdAndImage} from '../../types/project';
+import {IProject, IProjectIdAndImage} from '../../types/project.type';
 import {commissionProjectsApi, projectsApi, weddingProjectsApi} from '../apis';
 
 @Injectable({

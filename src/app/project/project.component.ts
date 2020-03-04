@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IProjectIdAndImage} from '../types/project';
+import {IProjectIdAndImage} from '../types/project.type';
 import {WeddingProjectModalComponent} from '../weddings/wedding-project-modal/wedding-project-modal.component';
 import {CommissionProjectModalComponent} from '../commissions/commission-project-modal/commission-project-modal.component';
 import {ProjectModalTypeEnum} from '../types/modal-type.enum';

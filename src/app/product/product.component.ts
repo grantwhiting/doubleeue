@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { IProductImage } from '../types/product-image';
+import { IProductImage } from '../types/product-image.type';
 
 @Component({
   selector: 'du-product',

@@ -1,10 +1,11 @@
-<div
-  @cardAnimation
-  class="products">
-  <du-product
-    *ngFor="let product of products"
-    [slug]="product.slug"
-    [productImage]="product.product_image">
-    {{ product.title.rendered }}
-  </du-product>
+<div class="banner">
+  -- Banner image here --
+  {{ banner[0].image.guid }}
+</div>
+<div class="carousel">
+  <div
+    *ngFor="let testimonial of testimonials"
+    class="carousel__item">
+    {{ testimonial.title.rendered }}
+  </div>
 </div>

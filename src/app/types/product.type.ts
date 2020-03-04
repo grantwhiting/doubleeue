@@ -1,7 +1,7 @@
-import {IProductImage} from './product-image';
-import {IGalleryItem} from './gallery-item';
+import { IProductImage } from './product-image.type';
+import {IGalleryItem} from './gallery-item.type';
 
-export interface IProject {
+export interface IProduct {
   id: number;
   fate: string;
   date_gmt: string;
@@ -22,12 +22,6 @@ export interface IProject {
     protected: boolean;
   };
   template: string;
-  project_image: IProductImage;
+  product_image: IProductImage;
   gallery: IGalleryItem[];
-  tag: string;
-}
-
-export interface IProjectIdAndImage {
-  id: number;
-  image: IProductImage;
 }

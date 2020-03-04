@@ -3,7 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {contactForm7Api} from '../apis';
-import {GeneralForm} from '../../types/form-data.interface';
+import {GeneralForm} from '../../types/form-data.type';
 import {WindowRef} from '../window/window.service';
 
 @Injectable()
