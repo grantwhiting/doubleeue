@@ -1,3 +1,7 @@
+// Global imports
+@import 'variables';
+
 :host {
   font-size: 1rem;
+  min-height: $page-content-height;
 }
