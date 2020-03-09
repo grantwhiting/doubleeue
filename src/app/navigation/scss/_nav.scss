@@ -8,7 +8,6 @@
 //
 .nav {
   margin: 0 auto;
-  max-width: 25em;
   display: none;
 
   &__list {
@@ -17,13 +16,17 @@
     justify-content: space-around;
     margin: 0;
     text-align: center;
-    padding: 1em 0;
+    padding: 0.5em 0;
+    border-top: 1px solid $color--06;
+    border-bottom: 1px solid $color--06;
   }
 
   &__item {
-    padding: 0.5em 0;
-    font-size: $text__fontSize--01--04;
+    font-family: $text__fontFamily--01--01;
+    font-size: $text__fontSize--01--05;
     list-style: none;
+    padding: 0.5em 0;
+    position: relative;
   }
 
   &__link {
@@ -33,24 +36,11 @@
     position: relative;
     padding-bottom: 0.4em;
     outline: none;
+    transition: color 0.3s ease;
 
-    &::before {
-      transition: all 0.3s ease;
-      width: 0;
-      content: '';
-      position: absolute;
-      bottom: 0;
-      border-top: 2px solid $color--05;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-
-    &:hover::before {
-      width: 160%;
-    }
-
-    &--active::before {
-      width: 100%;
+    &--active,
+    &:hover {
+      color: $color--04;
     }
 
   }
