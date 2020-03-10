@@ -1,43 +1,45 @@
-<div class="trigger">
-  <button
-    (click)="toggleMobileNav()"
-    class="trigger__item">
-    <span class="trigger__bar"></span>
-    <span class="trigger__bar"></span>
-    <span class="trigger__bar"></span>
-  </button>
-</div>
+<ng-container *ngIf="navItems$ | async">
+  <div class="trigger">
+    <button
+      (click)="toggleMobileNav()"
+      class="trigger__item">
+      <span class="trigger__bar"></span>
+      <span class="trigger__bar"></span>
+      <span class="trigger__bar"></span>
+    </button>
+  </div>
 
-<nav class="nav">
-  <ul class="nav__list">
-    <li class="nav__item">
-      <a
-        routerLink="/"
-        routerLinkActive="nav__link--active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        tabindex="0"
-        class="nav__link">
-        Home
-      </a>
-    </li>
-    <li class="nav__item">
-      <a
-        href="https://www.etsy.com/shop/DoubleEueDesignCo"
-        tabindex="0"
-        class="nav__link">
-        Shop
-      </a>
-    </li>
-    <li
-      *ngFor="let item of navItems$ | async"
-      class="nav__item">
-      <a
-        [routerLink]="item.url"
-        routerLinkActive="nav__link--active"
-        tabindex="0"
-        class="nav__link">
-        {{ item.title }}
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a
+          routerLink="/"
+          routerLinkActive="nav__link--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          tabindex="0"
+          class="nav__link">
+          Home
+        </a>
+      </li>
+      <li class="nav__item">
+        <a
+          href="https://www.etsy.com/shop/DoubleEueDesignCo"
+          tabindex="0"
+          class="nav__link">
+          Shop
+        </a>
+      </li>
+      <li
+        *ngFor="let item of navItems$ | async"
+        class="nav__item">
+        <a
+          [routerLink]="item.url"
+          routerLinkActive="nav__link--active"
+          tabindex="0"
+          class="nav__link">
+          {{ item.title }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</ng-container>

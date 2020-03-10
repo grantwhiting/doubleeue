@@ -1,13 +1,13 @@
 <div
   [duModalTrigger]="type === modalTypeEnum.WEDDING ?  weddingProjectModal : commissionProjectModal"
-  [modalContext]="{ id: this.projectIdAndImage.id }"
+  [modalContext]="{ id: projectIdAndImage.id }"
   tabindex="0"
   class="project">
   <h3 class="project__title">
     <ng-content></ng-content>
   </h3>
   <div
-    [style.backgroundImage]="'url('+ projectIdAndImage.image.guid +')'"
+    [style.backgroundImage]="'url(' + projectIdAndImage.image.guid + ')'"
     class="project__image">
   </div>
 </div>

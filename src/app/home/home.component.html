@@ -1,6 +1,6 @@
-<div class="banner">
-  -- Banner image here --
-  {{ banner[0].image.guid }}
+<div
+  [style.backgroundImage]="'url(' + banner[0].image.guid + ')'"
+  class="banner">
 </div>
 <div class="carousel">
   <div
