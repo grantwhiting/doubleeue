@@ -13,6 +13,7 @@ import {IBanner} from '../types/banner.type';
 export class HomeComponent implements OnInit {
   testimonials: ITestimonial[];
   banner: IBanner[];
+  showAnimation = true;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

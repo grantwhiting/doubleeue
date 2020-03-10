@@ -24,7 +24,6 @@ export class HomeResolver implements Resolve<IHomeContentType> {
           this.testimonialsService.getTestimonials(),
           this.bannerService.getBanner()
         ).pipe(map(allData => {
-          console.log(allData);
           return {
             testimonials: allData[0],
             banner: allData[1]

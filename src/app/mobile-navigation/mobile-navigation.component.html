@@ -1,31 +1,33 @@
-<ul class="list">
-  <li>
-    <a
-      (click)="toggleNav()"
-      routerLink="/"
-      routerLinkActive="list__link--active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      tabindex="0"
-      class="list__link">
-      Home
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.etsy.com/shop/DoubleEueDesignCo"
-      tabindex="0"
-      class="list__link">
-      Shop
-    </a>
-  </li>
-  <li *ngFor="let item of navItems$ | async">
-    <a
-      (click)="toggleNav()"
-      [routerLink]="item.url"
-      routerLinkActive="list__link--active"
-      tabindex="0"
-      class="list__link">
-      {{ item.title }}
-    </a>
-  </li>
-</ul>
+<ng-container *ngIf="navItems$ | async">
+  <ul class="list">
+    <li>
+      <a
+        (click)="toggleNav()"
+        routerLink="/"
+        routerLinkActive="list__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        tabindex="0"
+        class="list__link">
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.etsy.com/shop/DoubleEueDesignCo"
+        tabindex="0"
+        class="list__link">
+        Shop
+      </a>
+    </li>
+    <li *ngFor="let item of navItems$ | async">
+      <a
+        (click)="toggleNav()"
+        [routerLink]="item.url"
+        routerLinkActive="list__link--active"
+        tabindex="0"
+        class="list__link">
+        {{ item.title }}
+      </a>
+    </li>
+  </ul>
+</ng-container>

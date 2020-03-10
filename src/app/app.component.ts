@@ -3,11 +3,13 @@ import {MatDrawer} from '@angular/material';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {ModalService} from './services/modal/modal.service';
+import {fadeScaleEnterLeaveAnimation} from './animations/fade-scale-enter-leave.animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'],
+  animations: [fadeScaleEnterLeaveAnimation]
 })
 export class AppComponent implements OnDestroy {
   @ViewChild(MatDrawer, { static: false }) matDrawer: MatDrawer;
