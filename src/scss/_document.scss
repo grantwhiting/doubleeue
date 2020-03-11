@@ -24,3 +24,13 @@ html {
   padding: 0;
   transition: font-size 0.25s ease-out;
 }
+
+a {
+  color: $color--04;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: rgba($color--04, 0.7);
+  }
+
+}

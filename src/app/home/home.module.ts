@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeResolver } from './home.resolver';
 import {ProductModule} from '../product/product.module';
 import {CarouselContainerModule} from '../carousel-container/carousel-container.module';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import {CarouselContainerModule} from '../carousel-container/carousel-container.
     ProductModule,
     CarouselContainerModule
   ],
-    declarations: [HomeComponent],
+    declarations: [HomeComponent, TestimonialComponent],
     exports: [HomeComponent],
     providers: [HomeResolver]
 })

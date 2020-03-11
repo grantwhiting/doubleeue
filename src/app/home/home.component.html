@@ -4,8 +4,9 @@
 </div>
 <du-carousel-container class="carousel">
   <ng-container *ngFor="let testimonial of testimonials">
-    <div *duCarouselSlideTemplate>
-      {{ testimonial.title.rendered }}
-    </div>
+    <du-testimonial
+      *duCarouselSlideTemplate
+      [testimonial]="testimonial">
+    </du-testimonial>
   </ng-container>
 </du-carousel-container>

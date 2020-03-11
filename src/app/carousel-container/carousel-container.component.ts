@@ -14,10 +14,10 @@ export class CarouselContainerComponent implements AfterContentInit {
   carouselSlideTemplates: QueryList<TemplateRef<CarouselSlideTemplateDirective>>;
 
   carouselOptions: OwlOptions = {
+    stagePadding: 16,
     loop: true,
     dots: false,
     navSpeed: 700,
-    navText: ['', ''],
     responsive: {
       0: {
         items: 1

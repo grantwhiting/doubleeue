@@ -1,0 +1,22 @@
+<div class="item">
+  <div class="item__inner">
+    <div class="item__image">
+      <img
+        [attr.src]="testimonial.photo.guid"
+        [attr.alt]="testimonial.title.rendered" />
+    </div>
+    <div class="item__content">
+      <p
+        [innerHTML]="testimonial.content.rendered"
+        class="item__text">
+      </p>
+      <blockquote class="item__author">Author Name</blockquote>
+      <a
+        [routerLink]=""
+        tabIndex="0"
+        class="item__link">
+        see Jenn's invitations
+      </a>
+    </div>
+  </div>
+</div>
