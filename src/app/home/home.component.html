@@ -2,10 +2,10 @@
   [style.backgroundImage]="'url(' + banner[0].image.guid + ')'"
   class="banner">
 </div>
-<div class="carousel">
-  <div
-    *ngFor="let testimonial of testimonials"
-    class="carousel__item">
-    {{ testimonial.title.rendered }}
-  </div>
-</div>
+<du-carousel-container class="carousel">
+  <ng-container *ngFor="let testimonial of testimonials">
+    <div *duCarouselSlideTemplate>
+      {{ testimonial.title.rendered }}
+    </div>
+  </ng-container>
+</du-carousel-container>

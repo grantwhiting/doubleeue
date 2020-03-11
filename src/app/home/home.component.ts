@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {cardAnimation} from '../animations/card.animation';
 import {ITestimonial} from '../types/testimonial.type';
@@ -13,7 +13,6 @@ import {IBanner} from '../types/banner.type';
 export class HomeComponent implements OnInit {
   testimonials: ITestimonial[];
   banner: IBanner[];
-  showAnimation = true;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

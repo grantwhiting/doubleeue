@@ -1,0 +1,7 @@
+<owl-carousel-o [options]="carouselOptions">
+  <ng-template
+    *ngFor="let slideTemplate of carouselSlideTemplates"
+    carouselSlide>
+    <ng-container *ngTemplateOutlet="slideTemplate"></ng-container>
+  </ng-template>
+</owl-carousel-o>
