@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChildren, Directive, QueryList, TemplateRef} from '@angular/core';
+import {Component, ContentChildren, Directive, QueryList, TemplateRef} from '@angular/core';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 
 @Directive({ selector: '[duCarouselSlideTemplate]' })
@@ -9,32 +9,21 @@ export class CarouselSlideTemplateDirective {}
   templateUrl: './carousel-container.component.html',
   styleUrls: ['./carousel-container.component.scss']
 })
-export class CarouselContainerComponent implements AfterContentInit {
+export class CarouselContainerComponent {
   @ContentChildren(CarouselSlideTemplateDirective, { read: TemplateRef })
   carouselSlideTemplates: QueryList<TemplateRef<CarouselSlideTemplateDirective>>;
-
   carouselOptions: OwlOptions = {
+    stagePadding: 9,
     loop: true,
-    dots: false,
+    dots: true,
     navSpeed: 700,
-    navText: ['', ''],
     responsive: {
       0: {
         items: 1
       },
-      400: {
+      992: {
         items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
       }
     }
   };
-
-  ngAfterContentInit() {
-    console.log(this.carouselSlideTemplates);
-  }
 }

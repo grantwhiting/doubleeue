@@ -1,0 +1,21 @@
+<div class="item">
+  <div class="item__inner">
+    <img
+      [attr.src]="testimonial.photo.guid"
+      [attr.alt]="testimonial.title.rendered"
+      class="item__image" />
+    <div class="item__content">
+      <blockquote
+        [innerHTML]="testimonial.content.rendered"
+        class="item__text">
+      </blockquote>
+      <p class="item__author">&mdash; {{ testimonial.client_name }}</p>
+      <a
+        [routerLink]="testimonial.link_destination"
+        tabindex="0"
+        class="item__link">
+        {{ testimonial.link_text }}
+      </a>
+    </div>
+  </div>
+</div>

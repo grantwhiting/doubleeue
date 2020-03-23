@@ -47,4 +47,7 @@ export interface ITestimonial {
     comment_count: string;
     pod_item_id: string
   };
+  link_text: string;
+  link_destination: string;
+  client_name: string;
 }
