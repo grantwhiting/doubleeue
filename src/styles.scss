@@ -27,3 +27,7 @@ $doubleeue-theme: mat-light-theme($doubleeue-primary, $doubleeue-accent, $double
 
 // Custom imports
 @import 'scss/globals';
+
+.owl-stage {
+  display: flex;
+}

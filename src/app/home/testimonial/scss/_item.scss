@@ -1,27 +1,26 @@
 // Global Imports
 @import 'colors';
+@import 'breakpoints';
 
 //
 //
 //
 .item {
+  display: flex;
+  height: 100%;
   padding: 1em;
-  max-width: 400px;
 
   &__inner {
     box-shadow: 2px 2px 6px 1px rgba($color--06, 0.7);
-    padding: 1em;
-    display: flex;
     border-radius: 5px;
+    display: block;
+    padding: 1em;
   }
 
   &__image {
-    width: 10rem;
-
-    img {
-      border-radius: 50%;
-    }
-
+    border-radius: 50%;
+    max-width: 17em;
+    margin: 0 auto;
   }
 
   &__content {
@@ -29,9 +28,45 @@
     flex-direction: column;
   }
 
+  &__text ::ng-deep p {
+    margin-top: 0.5em;
+
+    &::before {
+      color: $color--04;
+      content: open-quote;
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.15em;
+      vertical-align: -0.37em;
+      position: relative;
+      bottom: -0.1em;
+    }
+
+  }
+
   &__link,
   &__author {
     align-self: flex-end;
+  }
+
+  &__author {
+    color: $color--06;
+    font-style: italic;
+  }
+
+}
+
+//
+//
+//
+// Small
+// _________________________________________________________________________________________
+@include sm {
+
+  .item__inner {
+    display: grid;
+    grid-template-columns: 10em auto;
+    grid-gap: 1em;
   }
 
 }
