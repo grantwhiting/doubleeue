@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChildren, Directive, QueryList, TemplateRef} from '@angular/core';
+import {Component, ContentChildren, Directive, QueryList, TemplateRef} from '@angular/core';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 
 @Directive({ selector: '[duCarouselSlideTemplate]' })
