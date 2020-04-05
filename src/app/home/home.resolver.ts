@@ -6,6 +6,7 @@ import {IBanner} from '../types/banner.type';
 import {BannerService} from '../services/banner/banner.service';
 import {forkJoin} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {PagesService} from '../services/pages/pages.service';
 
 interface IHomeContentType {
   testimonials: ITestimonial[];
@@ -14,20 +15,24 @@ interface IHomeContentType {
 
 @Injectable()
 export class HomeResolver implements Resolve<IHomeContentType> {
+  private homePage = 141;
 
-    constructor(
-      private testimonialsService: TestimonialsService,
-      private bannerService: BannerService) {}
+  constructor(
+    private testimonialsService: TestimonialsService,
+    private bannerService: BannerService,
+    private pagesService: PagesService) {}
 
-    resolve() {
-        return forkJoin(
-          this.testimonialsService.getTestimonials(),
-          this.bannerService.getBanner()
-        ).pipe(map(allData => {
-          return {
-            testimonials: allData[0],
-            banner: allData[1]
-          };
-        }));
-    }
+  resolve() {
+      return forkJoin(
+        this.testimonialsService.getTestimonials(),
+        this.bannerService.getBanner(),
+        this.pagesService.getPageById(this.homePage)
+      ).pipe(map(allData => {
+        return {
+          testimonials: allData[0],
+          banner: allData[1],
+          pageContent: allData[2]
+        };
+      }));
+  }
 }

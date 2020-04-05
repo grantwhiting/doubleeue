@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {cardAnimation} from '../animations/card.animation';
 import {ITestimonial} from '../types/testimonial.type';
 import {IBanner} from '../types/banner.type';
+import {IPage} from '../types/page.type';
 
 @Component({
   selector: 'du-home',
@@ -13,6 +14,7 @@ import {IBanner} from '../types/banner.type';
 export class HomeComponent implements OnInit {
   testimonials: ITestimonial[];
   banner: IBanner[];
+  pageContent: IPage;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
