@@ -2,6 +2,10 @@
   [style.backgroundImage]="'url(' + banner[0].image.guid + ')'"
   class="banner">
 </div>
+<div
+  class="content"
+  [innerHTML]="pageContent.content?.rendered">
+</div>
 <du-carousel-container>
   <ng-container *ngFor="let testimonial of testimonials">
     <du-testimonial

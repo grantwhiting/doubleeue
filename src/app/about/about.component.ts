@@ -1,7 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
 import {IPage} from '../types/page.type';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 
@@ -11,21 +9,13 @@ import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation'
   styleUrls: ['./about.component.scss'],
   animations: [fadeEnterLeaveAnimation]
 })
-export class AboutComponent implements OnInit, OnDestroy {
+export class AboutComponent implements OnInit {
   pageContent: IPage;
-
-  private unsubscribe: Subject<void> = new Subject();
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.data
-      .pipe(takeUntil(this.unsubscribe))
       .subscribe(({ page }) => this.pageContent = page);
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
   }
 }

@@ -14,14 +14,14 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
   private unsubscribe = new Subject<void>();
 
-  ngOnDestroy(): void {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
-  }
-
   ngAfterViewInit(): void {
     this.navComponent.toggleMobileNavEmitter
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(() => this.toggleNavEmitter.emit());
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }
