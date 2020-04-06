@@ -9,6 +9,7 @@ import {ContactResolver} from './contact/contact.resolver';
 import {WeddingsResolver} from './weddings/weddings.resolver';
 import {CommissionsComponent} from './commissions/commissions.component';
 import {CommissionsResolver} from './commissions/commissions.resolver';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 export const routes: Routes = [
   { path: 'product/cards', redirectTo: 'cards', pathMatch: 'full' },
@@ -39,5 +40,13 @@ export const routes: Routes = [
     path: 'contact',
     component: ContactComponent,
     resolve: { page: ContactResolver }
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
+  },
+  {
+    path: '404',
+    component: NotFoundComponent
   }
 ];
