@@ -21,6 +21,7 @@ import {WeddingsModule} from './weddings/weddings.module';
 import {WindowRef} from './services/window/window.service';
 import {NavigationService} from './services/navigation/navigation.service';
 import {CommissionsModule} from './commissions/commissions.module';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {CommissionsModule} from './commissions/commissions.module';
     NavigationComponent,
     MobileNavigationComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
