@@ -1,0 +1,75 @@
+// Global imports
+@import 'breakpoints';
+@import 'colors';
+
+//
+//
+//
+.form {
+  display: grid;
+  grid: repeat(4, auto) / 1fr;
+  grid-gap: 0.5em;
+  grid-template-areas: "inputLeft"
+  "inputRight"
+  "textarea"
+  "button";
+  width: 100%;
+
+  &__input {
+
+    &:first-of-type {
+      grid-area: inputLeft;
+    }
+
+    &:nth-of-type(2) {
+      grid-area: inputRight;
+    }
+
+  }
+
+  &__textarea {
+    grid-area: textarea;
+  }
+
+  &__button {
+    grid-area: button;
+  }
+
+}
+
+//
+//
+//
+// Small
+// _________________________________________________________________________________________
+@include sm {
+
+  .form {
+    grid: repeat(4, auto) / repeat(2, 1fr);
+    grid-template-areas: "inputLeft inputLeft"
+    "inputRight inputRight"
+    "textarea textarea"
+    "button .";
+  }
+
+}
+
+//
+//
+//
+// Material overrides
+// _________________________________________________________________________________________
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $color--04 !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: $color--04 !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: $color--04 !important;;
+}
