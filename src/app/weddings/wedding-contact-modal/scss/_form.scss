@@ -6,33 +6,29 @@
 //
 //
 .form {
-  display: grid;
-  grid: repeat(4, auto) / 1fr;
-  grid-gap: 0.5em;
-  grid-template-areas: "inputLeft"
-  "inputRight"
-  "textarea"
-  "button";
   width: 100%;
 
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__input {
-
-    &:first-of-type {
-      grid-area: inputLeft;
-    }
-
-    &:nth-of-type(2) {
-      grid-area: inputRight;
-    }
-
+    flex: 1;
   }
 
   &__textarea {
-    grid-area: textarea;
+    width: 100%;
   }
 
   &__button {
-    grid-area: button;
+    background-color: $color--04;
+    color: white;
+
+    &:hover {
+      background-color: lighten($color--04, 10%);
+    }
+
   }
 
 }
@@ -45,11 +41,15 @@
 @include sm {
 
   .form {
-    grid: repeat(4, auto) / repeat(2, 1fr);
-    grid-template-areas: "inputLeft inputLeft"
-    "inputRight inputRight"
-    "textarea textarea"
-    "button .";
+
+    &__item {
+      flex-direction: row;
+    }
+
+    &__input:first-of-type {
+      margin-right: 2em;
+    }
+
   }
 
 }
@@ -72,4 +72,13 @@
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
   background-color: $color--04 !important;;
+}
+
+::ng-deep.mat-calendar-body-selected {
+  background-color: $color--04 !important;
+}
+
+::ng-deep.mat-datepicker-toggle-default-icon {
+  color: $color--03 !important;
+  fill: $color--03 !important;
 }

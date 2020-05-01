@@ -4,6 +4,7 @@ import {FormService} from '../../services/form/form.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {fadeScaleEnterLeaveAnimation} from '../../animations/fade-scale-enter-leave.animation';
+import {contactForm7WeddingApi} from '../../services/apis';
 
 @Component({
   selector: 'du-wedding-contact-modal',
@@ -14,6 +15,7 @@ import {fadeScaleEnterLeaveAnimation} from '../../animations/fade-scale-enter-le
 export class WeddingContactModalComponent implements OnDestroy {
   form: FormGroup;
   showConfirmation: boolean;
+  showRequiredMessage: boolean;
 
   private unsubscribe: Subject<void> = new Subject();
 
@@ -25,12 +27,12 @@ export class WeddingContactModalComponent implements OnDestroy {
       contactName: ['', Validators.required],
       contactEmail: ['', Validators.required],
       contactPhoneNumber: ['', Validators.required],
-      instagramHandle: ['', Validators.required],
-      weddingDate: [null, Validators.required],
-      approxInvitations: [null, Validators.required],
-      inspirations: ['', Validators.required], // wedding-style and inspirations
-      contactMessage: ['', Validators.required], // tell me your love story
-      dreamInvitationSuite: ['', Validators.required] // describe your dream wedding invitation suite
+      instagramHandle: '',
+      weddingDate: null,
+      approxInvitations: null,
+      inspirations: '',
+      loveStory: '',
+      dreamInvitationSuite: ''
     });
   }
 
@@ -41,12 +43,12 @@ export class WeddingContactModalComponent implements OnDestroy {
 
   postForm() {
     if (!this.form.valid) {
+      this.showRequiredMessage = true;
       return;
     }
-    this.formService.postFormData(this.form.value)
+    this.formService.postFormData(this.form.value, contactForm7WeddingApi)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(response => {
-        console.log(response);
         if (response) {
           this.showConfirmation = true;
           this.form.reset();

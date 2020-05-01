@@ -1,4 +1,4 @@
-import {animate, query, style, transition, trigger} from '@angular/animations';
+import {animate, style, transition, trigger} from '@angular/animations';
 import {DEFAULT_TIMING} from './animation-constants';
 
 export const fadeEnterLeaveAnimation = trigger('fadeEnterLeave', [

@@ -7,6 +7,7 @@ import {FormService} from '../services/form/form.service';
 import {IPage} from '../types/page.type';
 import {fadeScaleEnterLeaveAnimation} from '../animations/fade-scale-enter-leave.animation';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
+import {contactForm7Api} from '../services/apis';
 
 @Component({
   selector: 'du-contact',
@@ -51,7 +52,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     if (!this.form.valid) {
       return;
     }
-    this.formService.postFormData(this.form.value)
+    this.formService.postFormData(this.form.value, contactForm7Api)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(response => {
         console.log(response);

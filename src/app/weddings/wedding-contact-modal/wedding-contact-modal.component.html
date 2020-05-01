@@ -1,39 +1,115 @@
 <du-modal-container>
   <du-modal-container-title>
-    Get a wedding Quote
+    Get a Wedding Quote
   </du-modal-container-title>
   <du-modal-container-body>
     <form
+      *ngIf="!showConfirmation; else confirmation"
+      @fadeScaleEnterLeave
       [formGroup]="form"
       class="form">
-      <mat-form-field class="form__input">
-        <input
-          matInput
-          placeholder="Name"
-          type="text"
-          formControlName="contactName" />
-        <mat-error *ngIf="form.get('contact').hasError('required')">
-          Name is required
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="form__input">
-        <input
-          matInput
-          placeholder="Email"
-          type="email"
-          formControlName="contactEmail" />
-        <mat-error *ngIf="form.get('contactEmail').hasError('email') && !form.get('contactEmail').hasError('required')">
-          Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="form.get('contactEmail').hasError('required')">
-          Email is required
-        </mat-error>
-      </mat-form-field>
+      <div class="form__item">
+        <mat-form-field class="form__input">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="contactName" />
+          <mat-error
+            *ngIf="
+              form.get('contactName').hasError('required')
+              || showRequiredMessage">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form__input">
+          <mat-label>Email Address</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="contactEmail" />
+          <mat-error
+            *ngIf="
+              form.get('contactEmail').hasError('email')
+              && !form.get('contactEmail').hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error
+            *ngIf="
+              form.get('contactEmail').hasError('required')
+              || showRequiredMessage">
+            Email address is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field class="form__input">
+          <mat-label>Phone Number</mat-label>
+          <input
+            matInput
+            type="tel"
+            formControlName="contactPhoneNumber" />
+          <mat-error
+            *ngIf="
+              form.get('contactPhoneNumber').hasError('phone')
+              && !form.get('contactPhoneNumber').hasError('required')">
+            Please enter a valid phone number
+          </mat-error>
+          <mat-error
+            *ngIf="
+              form.get('contactPhoneNumber').hasError('required')
+              || showRequiredMessage">
+            Phone number is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form__input">
+          <mat-label>Instagram Handle</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="instagramHandle" />
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field class="form__input">
+          <mat-label>Wedding Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="weddingDate" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker">
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="form__input">
+          <mat-label>Approximate # of Invitations</mat-label>
+          <input
+            matInput
+            type="number"
+            formControlName="approxInvitations" />
+        </mat-form-field>
+      </div>
       <mat-form-field class="form__textarea">
+        <mat-label>Tell Me Your Love Story</mat-label>
         <textarea
           matInput
-          placeholder="Message"
-          formControlName="contactMessage">
+          formControlName="loveStory">
+        </textarea>
+      </mat-form-field>
+      <mat-form-field class="form__textarea">
+        <mat-label>Wedding-style and Inspirations</mat-label>
+        <textarea
+          matInput
+          formControlName="inspirations">
+        </textarea>
+      </mat-form-field>
+      <mat-form-field class="form__textarea">
+        <mat-label>Describe Your Dream Wedding Invitation Suite</mat-label>
+        <textarea
+          matInput
+          formControlName="dreamInvitationSuite">
         </textarea>
       </mat-form-field>
       <button
@@ -41,7 +117,7 @@
         (click)="postForm()"
         type="button"
         class="form__button">
-        Submit
+        Quote me on that!
       </button>
     </form>
     <ng-template #confirmation>

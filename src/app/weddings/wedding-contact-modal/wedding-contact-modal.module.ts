@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {ModalContainerModule} from '../../modal/modal-container.module';
 import {WeddingContactModalComponent} from './wedding-contact-modal.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatNativeDateModule, MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {CommonModule} from '@angular/common';
 
 @NgModule({
@@ -12,7 +12,9 @@ import {CommonModule} from '@angular/common';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [ WeddingContactModalComponent ],
   exports: [ WeddingContactModalComponent ]

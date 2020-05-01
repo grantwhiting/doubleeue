@@ -32,7 +32,14 @@
   }
 
   &__button {
+    background-color: $color--04;
+    color: white;
     grid-area: button;
+
+    &:hover {
+      background-color: lighten($color--04, 10%);
+    }
+
   }
 
 }

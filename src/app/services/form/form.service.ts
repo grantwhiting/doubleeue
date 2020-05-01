@@ -20,10 +20,10 @@ export class FormService {
     private http: HttpClient,
     private windowRef: WindowRef) { }
 
-  postFormData(formData: GeneralForm) {
+  postFormData(formData: GeneralForm, endpoint: string) {
     console.log(this.serialize(formData));
     return this.http.post<GeneralForm>(
-      `${contactForm7Api}`,
+      `${endpoint}`,
       this.serialize(formData),
       {headers: this.httpOptions.headers})
         .pipe(catchError(error => this.handleError(error)));
