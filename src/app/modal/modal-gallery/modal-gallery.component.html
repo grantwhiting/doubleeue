@@ -1,11 +1,13 @@
 <div class="items">
   <ng-container [ngSwitch]="currentSelectedIndex">
     <ng-container *ngFor="let image of imageList; let i = index">
-      <div
-        [@slide]="animationParams"
-        *ngSwitchCase="i"
-        [style.backgroundImage]="'url(' + image.guid + ')'"
-        class="item">
+      <div @blockInitialRender>
+        <div
+          [@slide]="animationParams"
+          *ngSwitchCase="i"
+          [style.backgroundImage]="'url(' + image.guid + ')'"
+          class="item">
+        </div>
       </div>
     </ng-container>
   </ng-container>
