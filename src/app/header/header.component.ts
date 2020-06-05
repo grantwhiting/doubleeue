@@ -2,6 +2,7 @@ import {AfterViewInit, Component, EventEmitter, OnDestroy, Output, ViewChild} fr
 import {NavigationComponent} from '../navigation/navigation.component';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
+import {ScrollDispatcher} from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'du-header',
@@ -11,8 +12,11 @@ import {Subject} from 'rxjs';
 export class HeaderComponent implements AfterViewInit, OnDestroy {
   @ViewChild(NavigationComponent, { static: false }) navComponent: NavigationComponent;
   @Output() toggleNavEmitter = new EventEmitter<void>();
-
   private unsubscribe = new Subject<void>();
+
+  constructor(private scrollDispatcher: ScrollDispatcher) {
+    scrollDispatcher.scrolled().subscribe(() => console.log('scrolling'));
+  }
 
   ngAfterViewInit(): void {
     this.navComponent.toggleMobileNavEmitter
