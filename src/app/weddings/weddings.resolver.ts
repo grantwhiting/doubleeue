@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Resolve} from '@angular/router';
 import {ProductsService} from '../services/products/products.service';
-import {forkJoin} from 'rxjs';
+import {forkJoin} from 'rxjs/internal/observable/forkJoin';
 import {ProjectsService} from '../services/projects/projects.service';
-import {map} from 'rxjs/operators';
+import {map} from 'rxjs/internal/operators';
 import {IProduct} from '../types/product.type';
 import {IProjectIdAndImage} from '../types/project.type';
 

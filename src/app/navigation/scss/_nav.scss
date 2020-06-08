@@ -1,12 +1,14 @@
 // Global imports
 @import 'fonts';
 @import 'breakpoints';
-@import 'colors';
+@import 'site-colors';
 
 //
 //
 //
 .nav {
+  border-bottom: 1px solid $color--06;
+  border-top: 1px solid $color--06;
   margin: 0 auto;
   display: none;
 
@@ -14,11 +16,10 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
     padding: 0.5em 0;
-    border-top: 1px solid $color--06;
-    border-bottom: 1px solid $color--06;
+    max-width: 1336px;
   }
 
   &__item {

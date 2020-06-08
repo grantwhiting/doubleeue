@@ -23,5 +23,8 @@
       </a>
     </li>
   </ul>
-  <du-navigation class="header__nav"></du-navigation>
+  <du-navigation
+    (setFixedNavigationOnHeader)="setWithFixedNavigation($event)"
+    class="header__nav">
+  </du-navigation>
 </header>

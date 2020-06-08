@@ -1,8 +1,7 @@
-import {AfterViewInit, Component, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, HostBinding, OnDestroy, Output, ViewChild} from '@angular/core';
 import {NavigationComponent} from '../navigation/navigation.component';
-import {takeUntil} from 'rxjs/operators';
-import {Subject} from 'rxjs';
-import {ScrollDispatcher} from '@angular/cdk/scrolling';
+import {takeUntil} from 'rxjs/internal/operators/takeUntil';
+import {Subject} from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'du-header',
@@ -12,20 +11,24 @@ import {ScrollDispatcher} from '@angular/cdk/scrolling';
 export class HeaderComponent implements AfterViewInit, OnDestroy {
   @ViewChild(NavigationComponent, { static: false }) navComponent: NavigationComponent;
   @Output() toggleNavEmitter = new EventEmitter<void>();
+
+  @HostBinding('class.duHeader__navigation--fixed')
+  withFixedNavigation: boolean;
+
   private unsubscribe = new Subject<void>();
 
-  constructor(private scrollDispatcher: ScrollDispatcher) {
-    scrollDispatcher.scrolled().subscribe(() => console.log('scrolling'));
-  }
-
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     this.navComponent.toggleMobileNavEmitter
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(() => this.toggleNavEmitter.emit());
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.unsubscribe.next();
     this.unsubscribe.complete();
+  }
+
+  setWithFixedNavigation(isFixed: boolean) {
+    this.withFixedNavigation = isFixed;
   }
 }

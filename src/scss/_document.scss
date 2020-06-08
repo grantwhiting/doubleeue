@@ -1,5 +1,5 @@
 // Global Imports
-@import 'colors';
+@import 'variables/site-colors';
 
 //
 //
@@ -8,19 +8,12 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  overflow: auto;
-}
-
 html {
   background-color: $color--02;
   background-position: center center;
   background-size: cover;
   font-size: 100%;
   margin: 0;
-  overflow-y: hidden;
   padding: 0;
   transition: font-size 0.25s ease-out;
 }

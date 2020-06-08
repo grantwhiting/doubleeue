@@ -2,3 +2,12 @@
   font-size: 1rem;
   width: 100%;
 }
+
+//
+//
+//
+// Fixed navigation
+// _________________________________________________________________________________________
+:host(.duHeader__navigation--fixed) {
+  margin-bottom: 56px;
+}

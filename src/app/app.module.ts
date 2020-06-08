@@ -24,6 +24,7 @@ import {CommissionsModule} from './commissions/commissions.module';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
+
 @NgModule({
   declarations: [
     AppComponent,
