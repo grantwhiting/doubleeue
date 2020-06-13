@@ -15,14 +15,13 @@
 
   // Logo
   &__logo {
-    $size: 12em;
     font-family: $text__fontFamily--01--01;
-    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 432 387.05' style='enable-background:new 0 0 432 387.05;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23010101;} .st1{fill:none;} .st2{font-family:'CenturyGothic';} .st3{font-size:45px;} %3C/style%3E%3Cpolygon class='st0' points='113.7,26.63 164.42,131.93 216.27,26.63 260.68,116.22 164.42,307.21 68.52,116.22 '/%3E%3Crect x='-319.58' y='345.86' class='st1' width='1070.39' height='41.25'/%3E%3Cpolygon class='st0' points='318.45,26.63 362.86,116.22 267.76,307.21 221.78,219.17 '/%3E%3Crect x='0.72' y='333.05' class='st1' width='431.31' height='59.59'/%3E%3Ctext transform='matrix(1 0 0 1 16.6865 366.1709)' class='st2 st3'%3EDoubleEue Design%3C/text%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1070.39 366.02'%3E%3Cdefs%3E%3Cstyle%3E.cls-1{fill:%23010101;}.cls-2{fill:none;}.cls-3{font-size:45px;fill:%23231f20;font-family:CenturyGothic, Century Gothic;}%3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='433.29 0 484 105.31 535.85 0 580.26 89.59 484 280.58 388.1 89.59 433.29 0'/%3E%3Crect class='cls-2' y='319.23' width='1070.39' height='41.25'/%3E%3Cpolygon class='cls-1' points='638.03 0 682.44 89.59 587.34 280.58 541.36 192.54 638.03 0'/%3E%3Ctext class='cls-3' transform='translate(336.27 339.54)'%3EDoubleEue Design%3C/text%3E%3C/svg%3E");
     display: block;
     text-align: center;
-    margin: 0 auto;
-    width: $size;
-    height: $size;
+    margin: 2em auto;
+    width: 13em;
+    height: 12em;
     background-size: cover;
     background-position: center;
     order: 1;
@@ -30,6 +29,12 @@
     white-space: nowrap;
     overflow: hidden;
     outline: none;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
   }
 
   // Nav
