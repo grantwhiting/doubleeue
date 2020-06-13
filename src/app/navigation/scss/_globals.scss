@@ -1,11 +1,8 @@
-// Global imports
+// Global Imports
 @import 'breakpoints';
 
 :host {
-  $margin: 1.875em;
   font-size: 1rem;
-  margin-left: -$margin;
-  margin-right: -$margin;
 }
 
 //
@@ -13,23 +10,13 @@
 //
 // Truncated
 // _________________________________________________________________________________________
-:host(.duNavigation__fixed) {
-  background-color: rgba(255, 255, 255, 0.8);
-  position: fixed;
-  left: 0;
-  width: 100%;
-}
-
-//
-//
-//
-// Small
-// _________________________________________________________________________________________
 @include sm {
 
-  :host {
-    margin-left: 0;
-    margin-right: 0;
+  :host(.duNavigation__sticky) {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    left: 0;
+    width: 100%;
   }
 
 }

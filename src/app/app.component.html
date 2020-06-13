@@ -5,8 +5,8 @@
       (toggleNavEmitter)="toggleNav()">
     </nav>
   </mat-drawer>
+  <du-header (toggleNavEmitter)="toggleNav()"></du-header>
   <du-wrapper>
-    <du-header (toggleNavEmitter)="toggleNav()"></du-header>
     <router-outlet></router-outlet>
     <du-footer></du-footer>
   </du-wrapper>

@@ -1,6 +1,7 @@
-// Global imports
+// Global Imports
 @import 'fonts';
 @import 'breakpoints';
+@import 'variables';
 
 //
 //
@@ -8,17 +9,5 @@
 .content {
   margin-left: auto;
   margin-right: auto;
-}
-
-//
-//
-//
-// Medium
-// _________________________________________________________________________________________
-@include md {
-
-  .content {
-    max-width: calc(100% - 10em);
-  }
-
+  max-width: $content-min-width;
 }

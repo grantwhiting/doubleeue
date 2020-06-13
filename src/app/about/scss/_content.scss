@@ -4,9 +4,6 @@
 //
 //
 //
-:host {
-  font-size: 1rem;
-  min-height: $page-content-height;
+.content {
   max-width: $content-min-width;
-  width: 100%;
 }

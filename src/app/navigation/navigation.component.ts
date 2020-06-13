@@ -3,24 +3,27 @@ import {NavigationService} from '../services/navigation/navigation.service';
 import {Observable, Subject} from 'rxjs';
 import {INavigationItem} from '../types/navigation-items.type';
 import {WindowRef} from '../services/window/window.service';
+import {fadeScaleEnterLeaveAnimation} from '../animations/fade-scale-enter-leave.animation';
+import {StickyNavService} from '../services/sticky-nav/sticky-nav.service';
+import {fadeScaleEnterAnimation} from '../animations/fade-scale-enter.animation';
 
 @Component({
   selector: 'du-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
+  animations: [fadeScaleEnterAnimation]
 })
 export class NavigationComponent implements OnInit, OnDestroy {
   @Input() truncateHeader: boolean;
   @Output() toggleMobileNavEmitter = new EventEmitter<void>();
-  @Output() setFixedNavigationOnHeader = new EventEmitter<boolean>();
   navItems$: Observable<INavigationItem[]>;
 
   private unsubscribe = new Subject<void>();
   private hostTopPosition: number;
   private lastScrollTop: number;
 
-  @HostBinding('class.duNavigation__fixed')
-  navIsFixed: boolean;
+  @HostBinding('class.duNavigation__sticky')
+  navIsSticky: boolean;
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
@@ -28,14 +31,14 @@ export class NavigationComponent implements OnInit, OnDestroy {
     if (windowScrollYOffset > this.lastScrollTop) {
       // scrolling down
       if (windowScrollYOffset >= this.elementRef.nativeElement.getBoundingClientRect().top + windowScrollYOffset) {
-        this.navIsFixed = true;
-        this.setFixedNavigationOnHeader.emit(this.navIsFixed);
+        this.navIsSticky = true;
+        this.stickyNavService.setIsNavSticky(true);
       }
     } else {
       // scrolling up
       if (windowScrollYOffset <= this.hostTopPosition + 15) {
-        this.navIsFixed = false;
-        this.setFixedNavigationOnHeader.emit(this.navIsFixed);
+        this.navIsSticky = false;
+        this.stickyNavService.setIsNavSticky(false);
       }
     }
     // set scroll position
@@ -45,7 +48,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
   constructor(
     private windowRef: WindowRef,
     private elementRef: ElementRef,
-    private navigationService: NavigationService) {
+    private navigationService: NavigationService,
+    private stickyNavService: StickyNavService) {
   }
 
   ngOnInit() {

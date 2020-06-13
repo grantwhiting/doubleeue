@@ -1,3 +1,9 @@
+// Global Imports
+@import 'breakpoints';
+
+//
+//
+//
 :host {
   font-size: 1rem;
   flex-direction: column;
@@ -7,4 +13,17 @@
   justify-content: center;
   margin: 0 auto;
   padding: 0 2em;
+}
+
+//
+//
+//
+// Sticky nav
+// _________________________________________________________________________________________
+@include sm {
+
+  :host-context(.duWrapper__stickyNav) {
+    margin-top: 3.5em;
+  }
+
 }

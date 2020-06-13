@@ -1,4 +1,4 @@
-// Global imports
+// Global Imports
 @import 'breakpoints';
 @import 'fonts';
 @import 'list-reset';
@@ -43,7 +43,7 @@
     display: flex;
     position: absolute;
     top: 0.5em;
-    right: 0;
+    right: 1em;
 
     li {
       fill: $color--04;
@@ -63,7 +63,7 @@
 
   &__icon {
     $size: 1.5em;
-    text-indent: -999999px;
+    text-indent: -9999px;
     background-position: center;
     background-repeat: no-repeat;
     display: block;
