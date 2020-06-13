@@ -3,6 +3,7 @@
 
 :host {
   font-size: 1rem;
+  position: relative;
 }
 
 //
@@ -10,13 +11,9 @@
 //
 // Truncated
 // _________________________________________________________________________________________
-@include sm {
-
-  :host(.duNavigation__sticky) {
-    background-color: rgba(255, 255, 255, 0.8);
-    position: fixed;
-    left: 0;
-    width: 100%;
-  }
-
+:host(.duNavigation__sticky) {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  left: 0;
+  width: 100%;
 }
