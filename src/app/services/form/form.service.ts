@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {contactForm7Api} from '../apis';
 import {GeneralForm} from '../../types/form-data.type';
 import {WindowRef} from '../window/window.service';
 
@@ -41,7 +40,7 @@ export class FormService {
         `body was: ${error.error.message}`);
     }
     // return an observable with a user-facing error message
-    return throwError('Something bad happened; please try again later. Snowman!');
+    return throwError('Something bad happened; please try again later.');
   }
 
   private serialize(obj: any): URLSearchParams {
