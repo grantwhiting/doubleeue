@@ -65,10 +65,15 @@ template {
  */
 
 a {
+  transition: opacity 0.3s ease;
 
   &:active,
   &:hover {
       outline: 0;
+  }
+
+  &:hover {
+    opacity: 0.7;
   }
 
 }
