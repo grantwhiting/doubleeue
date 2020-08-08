@@ -4,6 +4,7 @@
 :host {
   font-size: 1rem;
   position: relative;
+  transition: box-shadow 0.5s ease;
   z-index: 2;
 }
 
@@ -14,6 +15,7 @@
 // _________________________________________________________________________________________
 :host(.duNavigation__sticky) {
   background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
   position: fixed;
   left: 0;
   width: 100%;
