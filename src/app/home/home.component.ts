@@ -4,6 +4,7 @@ import {cardAnimation} from '../animations/card.animation';
 import {ITestimonial} from '../types/testimonial.type';
 import {IBanner} from '../types/banner.type';
 import {IPage} from '../types/page.type';
+import {OwlOptions} from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'du-home',
@@ -15,6 +16,22 @@ export class HomeComponent implements OnInit {
   testimonials: ITestimonial[];
   banner: IBanner[];
   pageContent: IPage;
+  carouselOptions: OwlOptions = {
+    stagePadding: 9,
+    loop: true,
+    dots: true,
+    navSpeed: 700,
+    mouseDrag: true,
+    touchDrag: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      992: {
+        items: 2
+      }
+    }
+  };
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

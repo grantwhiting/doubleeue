@@ -3,7 +3,6 @@ import {NavigationService} from '../services/navigation/navigation.service';
 import {Observable, Subject} from 'rxjs';
 import {INavigationItem} from '../types/navigation-items.type';
 import {WindowRef} from '../services/window/window.service';
-import {fadeScaleEnterLeaveAnimation} from '../animations/fade-scale-enter-leave.animation';
 import {StickyNavService} from '../services/sticky-nav/sticky-nav.service';
 import {fadeScaleEnterAnimation} from '../animations/fade-scale-enter.animation';
 

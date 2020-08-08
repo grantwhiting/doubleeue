@@ -6,6 +6,14 @@
       [innerHTML]="project?.content.rendered"
       class="content">
     </div>
-    <du-modal-gallery [imageList]="project?.gallery"></du-modal-gallery>
+    <owl-carousel-o [options]="carouselOptions">
+      <ng-template
+        *ngFor="let item of project?.gallery"
+        carouselSlide>
+        <img
+          [alt]="item.post_title"
+          [src]="item.guid" />
+      </ng-template>
+    </owl-carousel-o>
   </du-modal-container-body>
 </du-modal-container>

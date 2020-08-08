@@ -6,11 +6,10 @@
   class="content"
   [innerHTML]="pageContent.content?.rendered">
 </div>
-<du-carousel-container>
-  <ng-container *ngFor="let testimonial of testimonials">
-    <du-testimonial
-      *duCarouselSlideTemplate
-      [testimonial]="testimonial">
-    </du-testimonial>
-  </ng-container>
-</du-carousel-container>
+<owl-carousel-o [options]="carouselOptions">
+  <ng-template
+    *ngFor="let testimonial of testimonials"
+    carouselSlide>
+    <du-testimonial [testimonial]="testimonial"></du-testimonial>
+  </ng-template>
+</owl-carousel-o>
