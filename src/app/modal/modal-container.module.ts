@@ -4,7 +4,6 @@ import {
   ModalContainerComponent, ModalContainerFooterDirective,
   ModalContainerTitleDirective
 } from './modal-container.component';
-import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -13,7 +12,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ModalContainerComponent,
     ModalContainerTitleDirective,
     ModalContainerBodyDirective,
-    ModalGalleryComponent,
     ModalContainerFooterDirective
   ],
   imports: [
@@ -24,7 +22,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ModalContainerComponent,
     ModalContainerTitleDirective,
     ModalContainerBodyDirective,
-    ModalGalleryComponent,
     ModalContainerFooterDirective
   ]
 })
