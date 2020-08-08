@@ -61,9 +61,12 @@
               <div class=\"logo\"></div>
 
               <script>
-                setTimeout(() => {
-                  document.querySelector('.logo').classList.add('fade');
-                });
+                const logo = document.querySelector('.logo');
+                if (logo) {
+                  setTimeout(() => {
+                    logo.classList.add('fade');
+                  });
+                }
               </script>
             </app-root>
         ";

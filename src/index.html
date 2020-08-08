@@ -58,7 +58,9 @@
 
     <script>
       const logo = document.querySelector('.logo');
-      logo.classList.add('fade');
+      if (logo !== null) {
+        logo.classList.add('fade');
+      }
     </script>
   </app-root>
 </body>

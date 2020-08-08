@@ -6,9 +6,9 @@ import {ProjectModule} from '../project/project.module';
 import { WeddingProjectModalComponent } from './wedding-project-modal/wedding-project-modal.component';
 import {WeddingProjectModalModule} from './wedding-project-modal/wedding-project-modal.module';
 import {WeddingContactModalModule} from './wedding-contact-modal/wedding-contact-modal.module';
-import {MatButtonModule} from '@angular/material';
 import {ModalTriggerModule} from '../services/modal/modal-trigger/modal-trigger.module';
 import {WeddingContactModalComponent} from './wedding-contact-modal/wedding-contact-modal.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   imports: [

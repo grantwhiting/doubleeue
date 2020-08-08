@@ -1,9 +1,9 @@
 import {Component, Inject, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
-import {MatDrawer} from '@angular/material';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {ModalService} from './services/modal/modal.service';
 import {fadeScaleEnterLeaveAnimation} from './animations/fade-scale-enter-leave.animation';
+import {MatDrawer} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
