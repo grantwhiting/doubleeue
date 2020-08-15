@@ -2,6 +2,7 @@ import {Component, HostBinding, OnDestroy, OnInit} from '@angular/core';
 import {StickyNavService} from '../../services/sticky-nav/sticky-nav.service';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'du-wrapper',
@@ -14,9 +15,22 @@ export class WrapperComponent implements OnInit, OnDestroy {
   @HostBinding('class.duWrapper__stickyNav')
   stickyNav: boolean;
 
-  constructor(private stickyNavService: StickyNavService) {}
+  @HostBinding('class.duWrapper__onHomepage')
+  onHomePage: boolean;
+
+  constructor(
+    private stickyNavService: StickyNavService,
+    private router: Router) {}
 
   ngOnInit() {
+    this.router.events
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(event => {
+        if (event instanceof NavigationEnd) {
+          this.onHomePage = event.url === '/';
+        }
+      });
+
     this.stickyNavService.isNavSticky
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(sticky => this.stickyNav = sticky);

@@ -5,7 +5,7 @@ import {HomeRoutingModule} from './home-routing.module';
 import {HomeResolver} from './home.resolver';
 import {ProductModule} from '../product/product.module';
 import {TestimonialComponent} from './testimonial/testimonial.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 
 @NgModule({
     imports: [

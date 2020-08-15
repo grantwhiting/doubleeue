@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {cardAnimation} from '../animations/card.animation';
 import {ITestimonial} from '../types/testimonial.type';
-import {IBanner} from '../types/banner.type';
 import {IPage} from '../types/page.type';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 
@@ -14,7 +13,6 @@ import {OwlOptions} from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
   testimonials: ITestimonial[];
-  banner: IBanner[];
   pageContent: IPage;
   carouselOptions: OwlOptions = {
     stagePadding: 9,
@@ -37,6 +35,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.data
-      .subscribe(({ data }) => Object.assign(this, {...data}));
+      .subscribe(({data}) => Object.assign(this, {...data}));
   }
 }

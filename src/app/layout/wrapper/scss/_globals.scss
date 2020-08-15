@@ -22,7 +22,7 @@
 // _________________________________________________________________________________________
 @include sm {
 
-  :host-context(.duWrapper__stickyNav) {
+  :host-context(.duWrapper__stickyNav):not(.duWrapper__onHomepage) {
     margin-top: 3.5em;
   }
 

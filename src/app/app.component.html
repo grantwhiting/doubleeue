@@ -6,6 +6,12 @@
     </nav>
   </mat-drawer>
   <du-header (toggleNavEmitter)="toggleNav()"></du-header>
+  <div
+    *ngIf="onHomePage"
+    [style.backgroundImage]="'url(' + banner.image.guid + ')'"
+    [class.banner--stickyNav]="stickyNav"
+    class="banner">
+  </div>
   <du-wrapper>
     <router-outlet></router-outlet>
     <du-footer></du-footer>

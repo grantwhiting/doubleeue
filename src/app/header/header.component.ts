@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, EventEmitter, HostBinding, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {NavigationComponent} from '../navigation/navigation.component';
 import {takeUntil} from 'rxjs/internal/operators/takeUntil';
 import {Subject} from 'rxjs/internal/Subject';
