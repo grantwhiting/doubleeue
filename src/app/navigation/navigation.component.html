@@ -42,24 +42,25 @@
           Home
         </a>
       </li>
-      <li class="nav__item">
-        <a
-          href="https://www.etsy.com/shop/DoubleEueDesignCo"
-          tabindex="0"
-          class="nav__link">
-          Shop
-        </a>
-      </li>
       <li
-        *ngFor="let item of navItems$ | async"
+        *ngFor="let item of navItems$ | async; let i = index"
         class="nav__item">
         <a
-          [routerLink]="item.url"
-          routerLinkActive="nav__link--active"
+          *ngIf="i === 2; else navItem"
+          href="https://www.etsy.com/shop/DoubleEueDesignCo"
           tabindex="0"
           class="nav__link">
           {{ item.title }}
         </a>
+        <ng-template #navItem>
+          <a
+            [routerLink]="item.url"
+            routerLinkActive="nav__link--active"
+            tabindex="0"
+            class="nav__link">
+            {{ item.title }}
+          </a>
+        </ng-template>
       </li>
     </ul>
   </nav>

@@ -11,15 +11,14 @@
         Home
       </a>
     </li>
-    <li>
+    <li *ngFor="let item of navItems$ | async; let i = index">
       <a
+        *ngIf="i === 2"
         href="https://www.etsy.com/shop/DoubleEueDesignCo"
         tabindex="0"
         class="list__link">
-        Shop
+        {{ item.title }}
       </a>
-    </li>
-    <li *ngFor="let item of navItems$ | async">
       <a
         (click)="toggleNav()"
         [routerLink]="item.url"

@@ -1,0 +1,25 @@
+// Global imports
+@import 'site-colors';
+
+//
+//
+//
+.owl-theme .owl-nav [class*=owl-] {
+  background-color: $color--04;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: lighten($color--04, 10%);
+  }
+
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background-color: $color--04;
+  transition: background-color 0.2s ease;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: lighten($color--04, 10%);
+}

@@ -17,6 +17,7 @@ export class CommissionProjectModalComponent implements OnInit, OnDestroy {
     loop: true,
     dots: true,
     navSpeed: 700,
+    nav: true,
     mouseDrag: true,
     touchDrag: true,
     responsive: {

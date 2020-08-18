@@ -5,6 +5,7 @@ import {INavigationItem} from '../types/navigation-items.type';
 import {WindowRef} from '../services/window/window.service';
 import {StickyNavService} from '../services/sticky-nav/sticky-nav.service';
 import {fadeScaleEnterAnimation} from '../animations/fade-scale-enter.animation';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'du-navigation',
@@ -48,7 +49,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
     private windowRef: WindowRef,
     private elementRef: ElementRef,
     private navigationService: NavigationService,
-    private stickyNavService: StickyNavService) {
+    private stickyNavService: StickyNavService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -64,5 +66,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   toggleMobileNav() {
     this.toggleMobileNavEmitter.emit();
+  }
+
+  routeToShop() {
+    this.router.navigate(['https://www.etsy.com/shop/DoubleEueDesignCo'])
   }
 }
