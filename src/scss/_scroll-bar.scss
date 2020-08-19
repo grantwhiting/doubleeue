@@ -1,0 +1,65 @@
+//
+//
+//
+// Scrollbars
+// _________________________________________________________________________________________
+$scrollbar__thumbColor: rgba(black, 0.075);
+
+// Devices with mouse or touchpad
+@media (any-hover: hover) and (any-pointer: fine) {
+
+  body {
+    --app__scrollbarWidth: 6px;
+  }
+
+}
+
+// Firefox only
+body * {
+  scrollbar-color: $scrollbar__thumbColor transparent;
+  scrollbar-width: thin;
+}
+
+@supports (-moz-appearance: none) {
+
+  // Devices with mouse or touchpad
+  //  - In firefox the scrollbar is wider
+  //  - In "Responsive Design Mode" mobile scrollbars are emulated, but it's not a realistic scenario
+  //  - "Enable touch simulation" needs to be enabled to see this work properly
+  @media (any-hover: hover) and (any-pointer: fine) {
+
+    body {
+      --app__scrollbarWidth: 8px;
+    }
+
+  }
+
+}
+
+// All other browsers
+body *::-webkit-scrollbar {
+  scrollbar-width: thin;
+  width: var(--app__scrollbarWidth);
+
+  &,
+  &-track {
+    background-color: transparent;
+  }
+
+  &-thumb {
+    background-color: $scrollbar__thumbColor;
+  }
+
+}
+
+// Smartphones and touchscreens
+// The scrollbar doesn't have width
+/* stylelint-disable */
+@media (any-hover: none) and (any-pointer: coarse) {
+
+  body {
+    --app__scrollbarWidth: 0px; // Units needed for use with calc
+  }
+
+}
+/* stylelint-enable */
