@@ -10,6 +10,7 @@ import {NavigationEnd, Router} from '@angular/router';
 import {BannerService} from './services/banner/banner.service';
 import {IBanner} from './types/banner.type';
 import {StickyNavService} from './services/sticky-nav/sticky-nav.service';
+import {WrapperComponent} from './layout/wrapper/wrapper.component';
 
 @Component({
   selector: 'app-root',
@@ -78,10 +79,14 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.unsubscribe.complete();
   }
 
-  toggleNav(): void {
+  toggleNav() {
     this.matDrawer.openedChange
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(navOpen => this.isExpanded = navOpen);
     this.matDrawer.toggle();
+  }
+
+  scrollToWrapper(element: WrapperComponent) {
+    element.elementRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
 }

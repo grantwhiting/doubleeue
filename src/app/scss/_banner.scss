@@ -1,5 +1,6 @@
 // Global Imports
 @import 'breakpoints';
+@import 'site-colors';
 
 //
 //
@@ -8,6 +9,23 @@
   background-position: top center;
   background-size: cover;
   height: calc(100vh - var(--header__height));
+  position: relative;
+
+  &__arrow {
+    $size: 2em;
+    animation: scrollArrow 0.5s ease;
+    transform: rotate(45deg) translateX(-50%);
+    background-color: transparent;
+    border-bottom: 2px solid $color--02;
+    border-right: 2px solid $color--02;
+    position: absolute;
+    left: 50%;
+    bottom: $size;
+    width: $size;
+    height: $size;
+    cursor: pointer;
+  }
+
 }
 
 //
@@ -19,6 +37,30 @@
 
   .banner--stickyNav {
     margin-top: 3.5em;
+  }
+
+}
+
+//
+//
+//
+// Keyframes animations
+// _________________________________________________________________________________________
+@keyframes scrollArrow {
+
+  0% {
+    opacity: 0;
+    transform: translateY(-2em) rotate(45deg) translateX(-50%);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(-1em) rotate(45deg) translateX(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(45deg) translateX(-50%);
   }
 
 }

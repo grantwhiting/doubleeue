@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, HostBinding, OnDestroy, OnInit} from '@angular/core';
 import {StickyNavService} from '../../services/sticky-nav/sticky-nav.service';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
@@ -20,7 +20,8 @@ export class WrapperComponent implements OnInit, OnDestroy {
 
   constructor(
     private stickyNavService: StickyNavService,
-    private router: Router) {}
+    private router: Router,
+    public elementRef: ElementRef) {}
 
   ngOnInit() {
     this.router.events

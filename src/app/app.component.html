@@ -11,8 +11,12 @@
     [style.backgroundImage]="'url(' + banner.image.guid + ')'"
     [class.banner--stickyNav]="stickyNav"
     class="banner">
+    <span
+      (click)="scrollToWrapper(wrapper)"
+      class="banner__arrow">
+    </span>
   </div>
-  <du-wrapper>
+  <du-wrapper #wrapper>
     <router-outlet></router-outlet>
     <du-footer></du-footer>
   </du-wrapper>
