@@ -5,6 +5,7 @@ import {IProjectIdAndImage} from '../types/project.type';
 import {cardAnimation} from '../animations/card.animation';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
 import {ProjectModalTypeEnum} from '../types/modal-type.enum';
+import {CommissionsContactModalComponent} from './commissions-contact-modal/commissions-contact-modal.component';
 
 @Component({
   selector: 'du-commissions',
@@ -16,6 +17,7 @@ export class CommissionsComponent implements OnInit {
   pod: IProduct;
   commissionProjects: IProjectIdAndImage[];
   modalTypeEnum = ProjectModalTypeEnum;
+  CommissionsContactModal = CommissionsContactModalComponent;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 

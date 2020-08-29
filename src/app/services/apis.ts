@@ -4,6 +4,7 @@ export const productsApi = `${environment.apiUrl}/wp-json/wp/v2/product`;
 export const pagesApi = `${environment.apiUrl}/wp-json/wp/v2/pages`;
 export const contactForm7Api = `${environment.apiUrl}/wp-json/contact-form-7/v1/contact-forms/39`;
 export const contactForm7WeddingApi = `${environment.apiUrl}/wp-json/contact-form-7/v1/contact-forms/144`;
+export const contactForm7CommissionsApi = `${environment.apiUrl}/wp-json/contact-form-7/v1/contact-forms/161`;
 export const mainNavigationApi = `${environment.apiUrl}/wp-json/routes/main`;
 export const projectsApi = `${environment.apiUrl}/wp-json/wp/v2/project`;
 export const commissionProjectsApi =  `${environment.apiUrl}/wp-json/pods/commissions`;

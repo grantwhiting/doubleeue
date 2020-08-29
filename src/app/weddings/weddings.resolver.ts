@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Resolve} from '@angular/router';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {ProductsService} from '../services/products/products.service';
-import {forkJoin} from 'rxjs/internal/observable/forkJoin';
+import {forkJoin, Observable} from 'rxjs';
 import {ProjectsService} from '../services/projects/projects.service';
-import {map} from 'rxjs/internal/operators';
+import {map, tap} from 'rxjs/internal/operators';
 import {IProduct} from '../types/product.type';
 import {IProjectIdAndImage} from '../types/project.type';
 
@@ -21,15 +21,17 @@ export class WeddingsResolver implements Resolve<IWeddingComponentType> {
     private productsService: ProductsService,
     private projectsService: ProjectsService) { }
 
-  resolve() {
-    return forkJoin(
-      this.productsService.getProductByProductId(this.weddingsProductId),
-      this.projectsService.getWeddingProjects()
-    ).pipe(map(allData => {
-      return {
-        pod: allData[0],
-        weddingProjects: allData[1]
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
+      Observable<IWeddingComponentType> | Promise<IWeddingComponentType> | IWeddingComponentType {
+      const data: IWeddingComponentType = {
+        pod: null,
+        weddingProjects: null
       };
-    }));
-  }
+      return forkJoin([
+        this.productsService.getProductByProductId(this.weddingsProductId)
+          .pipe(tap((product: IProduct) => data.pod = product)),
+        this.projectsService.getWeddingProjects()
+          .pipe(tap((weddingProjects: IProjectIdAndImage[]) => data.weddingProjects = weddingProjects))
+      ]).pipe(map(() => data));
+    }
 }

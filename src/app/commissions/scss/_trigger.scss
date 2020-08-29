@@ -1,0 +1,19 @@
+// Global Imports
+@import 'site-colors';
+
+//
+//
+//
+.trigger {
+  position: fixed;
+  bottom: 5em;
+  right: 3em;
+  background-color: $color--04;
+  color: white;
+  padding: 1em 3em;
+
+  &:hover {
+    background-color: lighten($color--04, 10%);
+  }
+
+}

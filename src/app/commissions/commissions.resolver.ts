@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Resolve} from '@angular/router';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {IProduct} from '../types/product.type';
 import {ProductsService} from '../services/products/products.service';
-import {forkJoin} from 'rxjs';
+import {forkJoin, Observable, zip} from 'rxjs';
 import {ProjectsService} from '../services/projects/projects.service';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {IProjectIdAndImage} from '../types/project.type';
 
 interface ICommissionsComponentType {
@@ -21,15 +21,18 @@ export class CommissionsResolver implements Resolve<ICommissionsComponentType> {
     private productsService: ProductsService,
     private projectsService: ProjectsService) { }
 
-  resolve() {
-    return forkJoin(
-      this.productsService.getProductByProductId(this.commissionsProductId),
-      this.projectsService.getCommissionProjects()
-    ).pipe(map(allData => {
-      return {
-        pod: allData[0],
-        commissionProjects: allData[1]
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
+      Observable<ICommissionsComponentType> | Promise<ICommissionsComponentType> | ICommissionsComponentType {
+      const data: ICommissionsComponentType = {
+        pod: null,
+        commissionProjects: null
       };
-    }));
-  }
+      return forkJoin([
+        this.productsService.getProductByProductId(this.commissionsProductId)
+          .pipe(tap((product: IProduct) => data.pod = product)),
+        this.projectsService.getCommissionProjects()
+          .pipe(tap((commissionProjects: IProjectIdAndImage[]) => data.commissionProjects = commissionProjects))
+        ]
+      ).pipe(map(() => data));
+    }
 }

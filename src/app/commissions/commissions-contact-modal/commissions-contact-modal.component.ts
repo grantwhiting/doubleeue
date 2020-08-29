@@ -2,17 +2,17 @@ import {Component, OnDestroy} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FormService} from '../../services/form/form.service';
 import {Subject} from 'rxjs';
+import {contactForm7CommissionsApi} from '../../services/apis';
 import {takeUntil} from 'rxjs/operators';
 import {fadeScaleEnterLeaveAnimation} from '../../animations/fade-scale-enter-leave.animation';
-import {contactForm7WeddingApi} from '../../services/apis';
 
 @Component({
-  selector: 'du-wedding-contact-modal',
-  templateUrl: './wedding-contact-modal.component.html',
-  styleUrls: ['./wedding-contact-modal.component.scss'],
+  selector: 'du-commissions-contact-modal',
+  templateUrl: './commissions-contact-modal.component.html',
+  styleUrls: ['./commissions-contact-modal.component.scss'],
   animations: [fadeScaleEnterLeaveAnimation]
 })
-export class WeddingContactModalComponent implements OnDestroy {
+export class CommissionsContactModalComponent implements OnDestroy {
   form: FormGroup;
   showConfirmation: boolean;
   showRequiredMessage: boolean;
@@ -22,17 +22,11 @@ export class WeddingContactModalComponent implements OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private formService: FormService) {
-
     this.form = formBuilder.group({
       contactName: ['', Validators.required],
       contactEmail: ['', Validators.required],
       contactPhoneNumber: [''],
-      instagramHandle: [''],
-      weddingDate: null,
-      approxInvitations: null,
-      inspirations: [''],
-      loveStory: [''],
-      dreamInvitationSuite: ['']
+      commissionProject: ['', Validators.required]
     });
   }
 
@@ -46,7 +40,7 @@ export class WeddingContactModalComponent implements OnDestroy {
       this.showRequiredMessage = true;
       return;
     }
-    this.formService.postFormData(this.form.value, contactForm7WeddingApi)
+    this.formService.postFormData(this.form.value, contactForm7CommissionsApi)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(response => {
         if (response) {

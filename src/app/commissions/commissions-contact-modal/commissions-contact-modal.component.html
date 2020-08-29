@@ -1,0 +1,94 @@
+<du-modal-container>
+  <du-modal-container-title>
+    Get a Commission Project Quote
+  </du-modal-container-title>
+  <du-modal-container-body>
+    <form
+      *ngIf="!showConfirmation; else confirmation"
+      @fadeScaleEnterLeave
+      [formGroup]="form"
+      class="form">
+      <div class="form__item">
+        <mat-form-field class="form__input">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="contactName" />
+          <mat-error
+            *ngIf="
+              form.get('contactName').hasError('required')
+              || showRequiredMessage">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field class="form__input">
+          <mat-label>Email Address</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="contactEmail" />
+          <mat-error
+            *ngIf="
+              form.get('contactEmail').hasError('email')
+              && !form.get('contactEmail').hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error
+            *ngIf="
+              form.get('contactEmail').hasError('required')
+              || showRequiredMessage">
+            Email address is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field class="form__input">
+          <mat-label>Phone Number</mat-label>
+          <input
+            matInput
+            type="tel"
+            formControlName="contactPhoneNumber" />
+          <mat-error
+            *ngIf="
+              form.get('contactPhoneNumber').hasError('phone')
+              && !form.get('contactPhoneNumber').hasError('required')">
+            Please enter a valid phone number
+          </mat-error>
+          <mat-error
+            *ngIf="
+              form.get('contactPhoneNumber').hasError('required')
+              || showRequiredMessage">
+            Phone number is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form__item">
+        <mat-form-field class="form__input">
+          <mat-label>What is your vision, direction, goals for the project, etc.?</mat-label>
+          <textarea
+            matInput
+            formControlName="commissionProject">
+        </textarea>
+        </mat-form-field>
+      </div>
+      <button
+        mat-raised-button
+        (click)="postForm()"
+        type="button"
+        class="form__button">
+        Quote me on that!
+      </button>
+    </form>
+    <ng-template #confirmation>
+      <div
+        @fadeScaleEnterLeave
+        class="confirmation">
+        <h2>Thank you!</h2>
+        <h3>Your message has been sent</h3>
+      </div>
+    </ng-template>
+  </du-modal-container-body>
+</du-modal-container>
