@@ -18,6 +18,7 @@ export class WeddingProjectModalComponent implements OnInit, OnDestroy {
     dots: true,
     navSpeed: 700,
     nav: true,
+    navText: ['', ''],
     mouseDrag: true,
     touchDrag: true,
     responsive: {

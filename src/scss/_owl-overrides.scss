@@ -4,12 +4,60 @@
 //
 //
 //
+// Local variables
+$position: calc(100% - 3.2em);
+$arrow__position: 0.2rem;
+
+//
+//
+//
 .owl-theme .owl-nav [class*=owl-] {
-  background-color: $color--04;
+  $size: 3.5em;
+  border: 2px solid lighten($color--04, 10%);
+  background-color: transparent;
+  border-radius: 50%;
+  height: $size;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-94%);
   transition: background-color 0.2s ease;
+  width: $size;
+
+  &::before {
+    color: $color--04;
+    display: block;
+    font-size: 3.4rem;
+    margin-top: -1.1rem;
+    transition: color 0.2s ease;
+  }
 
   &:hover {
     background-color: lighten($color--04, 10%);
+
+    &::before {
+      color: darken($color--04, 10%);
+    }
+
+  }
+
+}
+
+.owl-prev {
+  right: $position;
+
+  &::before {
+    content: '\2039';
+    margin-left: -#{$arrow__position};
+  }
+
+}
+
+.owl-next {
+  left: $position;
+
+  &::before {
+    content: '\203A';
+    margin-left: $arrow__position;
   }
 
 }
