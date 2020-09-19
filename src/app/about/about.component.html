@@ -1,5 +1,12 @@
 <div
   @fadeEnterLeave
-  [innerHTML]="pageContent.content?.rendered"
   class="content">
+  <img
+    alt="Courtney Whiting"
+    [attr.src]="baseHref + '/assets/court.png'"
+    class="content__image" />
+  <div
+    [innerHTML]="pageContent.content?.rendered"
+    class="content__details">
+  </div>
 </div>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {IPage} from '../types/page.type';
 import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation';
+import { baseHref } from '../services/global-variables';
 
 @Component({
   selector: 'du-about',
@@ -11,6 +12,7 @@ import {fadeEnterLeaveAnimation} from '../animations/fade-enter-leave.animation'
 })
 export class AboutComponent implements OnInit {
   pageContent: IPage;
+  baseHref = baseHref;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

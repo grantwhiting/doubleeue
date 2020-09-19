@@ -1,9 +1,40 @@
 // Global Imports
 @import 'variables';
+@import 'breakpoints';
 
 //
 //
 //
 .content {
+  display: flex;
+  margin-top: 3em;
   max-width: $content-min-width;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__image,
+  &__details {
+    width: 100%;
+  }
+
+}
+
+//
+//
+//
+// Medium
+// _________________________________________________________________________________________
+@include md {
+
+  .content {
+    flex-wrap: nowrap;
+
+    &__image,
+    &__details {
+      width: 47%;
+    }
+
+  }
+
 }
