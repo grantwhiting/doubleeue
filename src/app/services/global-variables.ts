@@ -1,1 +1,1 @@
-export const baseHref = '/wordpress/wp-content/themes/doubleeue/src';
+export const baseHref = '/wp-content/themes/doubleeue/src';

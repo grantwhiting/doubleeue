@@ -12,8 +12,8 @@
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run doubleeue:server:production --bundleDependencies all",
-    "dev": "ng build --watch --deploy-url /wordpress/wp-content/themes/doubleeue/dist/",
-    "prod": "ng build --prod --baseHref /wordpress/wp-content/themes/doubleeue/dist/"
+    "dev": "ng build --watch --deploy-url /wp-content/themes/doubleeue/dist/",
+    "prod": "ng build --prod --baseHref /wp-content/themes/doubleeue/dist/"
   },
   "private": true,
   "dependencies": {
