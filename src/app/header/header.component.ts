@@ -3,6 +3,7 @@ import {NavigationComponent} from '../navigation/navigation.component';
 import {takeUntil} from 'rxjs/internal/operators/takeUntil';
 import {Subject} from 'rxjs/internal/Subject';
 import {StickyNavService} from '../services/sticky-nav/sticky-nav.service';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'du-header',
@@ -13,10 +14,22 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(NavigationComponent, { static: false }) navComponent: NavigationComponent;
   @Output() toggleNavEmitter = new EventEmitter<void>();
   stickyNav: boolean;
+  onHomePage: boolean;
 
   private unsubscribe = new Subject<void>();
 
-  constructor(private stickyNavService: StickyNavService) {}
+  constructor(
+    private stickyNavService: StickyNavService,
+    private router: Router) {
+
+    router.events
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(event => {
+        if (event instanceof NavigationEnd) {
+          this.onHomePage = event.url === '/';
+        }
+      });
+  }
 
   ngOnInit() {
     this.stickyNavService.isNavSticky

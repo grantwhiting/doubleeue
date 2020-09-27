@@ -22,7 +22,11 @@
         class="cls-1"
         points="249.93 0 294.33 89.59 199.24 280.58 153.25 192.54 249.93 0"/>
     </svg>
-    <span class="header__title">DoubleEue Design</span>
+    <span
+      *ngIf="onHomePage"
+      class="header__title">
+      DoubleEue Design
+    </span>
   </a>
   <ul class="header__socialIcons">
     <li>
